@@ -41,8 +41,11 @@
     //if ([locObj valueForKey:@"longitude"] != NULL) {
        // NSNumber *longitude = [NSNumber numberWithDouble:lon];
    // NSNumber *longitude = [NSNumber numberWithString:@"-117.0987"];
+    NSString *locDescription = [[NSString alloc] initWithString:@"This is a description of a location"];
+    [sessionInfo setValue:locDescription forKey:@"location"];
+    
     NSString *body = [[NSString alloc] initWithString:@"This is some sample text"];
-        [textEntryInfo setValue:body forKey:@"body"];
+    [textEntryInfo setValue:body forKey:@"body"];
    // }
     
 //    [failedBankDetails setValue:[NSDate date] forKey:@"closeDate"];
@@ -50,12 +53,27 @@
 //    [failedBankDetails setValue:[NSNumber numberWithInt:12345] forKey:@"zip"];
 //    [failedBankDetails setValue:sessionInfo forKey:@"info"];
 //    [failedBankInfo setValue:failedBankDetails forKey:@"details"];
-//    NSError *error;
-//    if (![self.managedObjectContext save:error]) {
-//        NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
-//    }
     
+    NSError *error;
+    if (![self.managedObjectContext save:&error]) {
+        NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+    }
     
+    //List all the objects in the db
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *sessionEntity = [NSEntityDescription
+                                          entityForName:@"Session" inManagedObjectContext:self.managedObjectContext];
+    [fetchRequest setEntity:sessionEntity];
+    NSArray *fetchedObjects = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    
+    for (NSManagedObject *sessionObject in fetchedObjects) {
+        NSLog(@"Latitude: %@", [sessionObject valueForKey:@"latitude"]);
+        NSLog(@"Longitude: %@", [sessionObject valueForKey:@"longitude"]);
+        NSLog(@"Location: %@", [sessionObject valueForKey:@"location"]);
+        
+        NSManagedObject *textEntryObject = [sessionObject valueForKey:@"textentry"];
+        NSLog(@"Text body: %@", [textEntryObject valueForKey:@"body"]);
+    }
     
     
 }
@@ -75,6 +93,20 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    
+//    NSError *error;
+//    
+//    NSManagedObject *sessionInfo = [NSEntityDescription
+//                                    insertNewObjectForEntityForName:@"Session"
+//                                    inManagedObjectContext:self.managedObjectContext];
+//    //[sessionInfo setValue:NSNumber forKey:@"latitude"];
+//    
+//    NSManagedObject *textEntryInfo = [NSEntityDescription
+//                                      insertNewObjectForEntityForName:@"TextEntry"
+//                                      inManagedObjectContext:self.managedObjectContext];
+    
+    
+    
 }
 
 - (void)viewWillDisappear:(BOOL)animated
