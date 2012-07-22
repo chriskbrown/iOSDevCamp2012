@@ -34,6 +34,8 @@
 		A7B5ABA715BB99AE007878B6 /* GTMOAuth2ViewControllerTouch.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B5ABA215BB99AE007878B6 /* GTMOAuth2ViewControllerTouch.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A7B5ABA815BB99AE007878B6 /* GTMOAuth2ViewTouch.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7B5ABA315BB99AE007878B6 /* GTMOAuth2ViewTouch.xib */; };
 		A7B5ABB915BB9F5A007878B6 /* TextTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B5ABB815BB9F5A007878B6 /* TextTableViewController.m */; };
+		A7B7179015BC6BB400294E15 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A7B7178F15BC6BB400294E15 /* Icon.png */; };
+		A7B7179215BC6BBF00294E15 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A7B7179115BC6BBF00294E15 /* Icon@2x.png */; };
 		A7FCCAB715BBD2B800E248D5 /* Session.m in Sources */ = {isa = PBXBuildFile; fileRef = A7FCCAB615BBD2B800E248D5 /* Session.m */; };
 		A7FCCABB15BBD2C700E248D5 /* TextEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = A7FCCABA15BBD2C700E248D5 /* TextEntry.m */; };
 		D88F90DB15BBDC9C008936F2 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88F90DA15BBDC9C008936F2 /* MediaPlayer.framework */; };
@@ -98,6 +100,8 @@
 		A7B5ABA315BB99AE007878B6 /* GTMOAuth2ViewTouch.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GTMOAuth2ViewTouch.xib; sourceTree = "<group>"; };
 		A7B5ABB715BB9F5A007878B6 /* TextTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextTableViewController.h; sourceTree = "<group>"; };
 		A7B5ABB815BB9F5A007878B6 /* TextTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextTableViewController.m; sourceTree = "<group>"; };
+		A7B7178F15BC6BB400294E15 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../Icon.png; sourceTree = "<group>"; };
+		A7B7179115BC6BBF00294E15 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "../Icon@2x.png"; sourceTree = "<group>"; };
 		A7FCCAB515BBD2B800E248D5 /* Session.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Session.h; sourceTree = "<group>"; };
 		A7FCCAB615BBD2B800E248D5 /* Session.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Session.m; sourceTree = "<group>"; };
 		A7FCCAB915BBD2C700E248D5 /* TextEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextEntry.h; sourceTree = "<group>"; };
@@ -186,14 +190,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A736514E15BC023D001D6890 /* assets */ = {
-			isa = PBXGroup;
-			children = (
-				A736514B15BC0235001D6890 /* twitter-bird-white-on-blue.png */,
-			);
-			name = assets;
-			sourceTree = "<group>";
-		};
 		A75B8D7E15BB3142005D9719 = {
 			isa = PBXGroup;
 			children = (
@@ -253,6 +249,7 @@
 				A7FCCABA15BBD2C700E248D5 /* TextEntry.m */,
 				A7FCCAB515BBD2B800E248D5 /* Session.h */,
 				A7FCCAB615BBD2B800E248D5 /* Session.m */,
+				A7B7179315BC6BDB00294E15 /* Resources */,
 				A75B8D9615BB3143005D9719 /* Supporting Files */,
 			);
 			path = iosdevcamp2012;
@@ -261,7 +258,6 @@
 		A75B8D9615BB3143005D9719 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				A736514E15BC023D001D6890 /* assets */,
 				A75B8D9715BB3143005D9719 /* iosdevcamp2012-Info.plist */,
 				A75B8D9815BB3143005D9719 /* InfoPlist.strings */,
 				A75B8D9B15BB3143005D9719 /* main.m */,
@@ -311,6 +307,16 @@
 				A7B5ABA315BB99AE007878B6 /* GTMOAuth2ViewTouch.xib */,
 			);
 			name = Oauth2;
+			sourceTree = "<group>";
+		};
+		A7B7179315BC6BDB00294E15 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A7B7179115BC6BBF00294E15 /* Icon@2x.png */,
+				A7B7178F15BC6BB400294E15 /* Icon.png */,
+				A736514B15BC0235001D6890 /* twitter-bird-white-on-blue.png */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		D88F90E615BBE2B3008936F2 /* dependencies */ = {
@@ -470,8 +476,9 @@
 				A75B8DA315BB3143005D9719 /* MainStoryboard.storyboard in Resources */,
 				A7B5ABA815BB99AE007878B6 /* GTMOAuth2ViewTouch.xib in Resources */,
 				D88F912715BC01F6008936F2 /* tessdata in Resources */,
-				D88F911B15BBE4E0008936F2 /* eng.traineddata in Resources */,
 				A736514C15BC0235001D6890 /* twitter-bird-white-on-blue.png in Resources */,
+				A7B7179015BC6BB400294E15 /* Icon.png in Resources */,
+				A7B7179215BC6BBF00294E15 /* Icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
