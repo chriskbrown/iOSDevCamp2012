@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		A736514C15BC0235001D6890 /* twitter-bird-white-on-blue.png in Resources */ = {isa = PBXBuildFile; fileRef = A736514B15BC0235001D6890 /* twitter-bird-white-on-blue.png */; };
 		A736515115BC048E001D6890 /* TextDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A736515015BC048E001D6890 /* TextDetailViewController.m */; };
-		A741A07E15BC81D6003CEFD0 /* ecsplash.png in Resources */ = {isa = PBXBuildFile; fileRef = A741A07D15BC81D6003CEFD0 /* ecsplash.png */; };
 		A741A08315BC8287003CEFD0 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = A741A08115BC81F6003CEFD0 /* Default.png */; };
 		A741A08515BC8291003CEFD0 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A741A08415BC8291003CEFD0 /* Default@2x.png */; };
 		A75B8D8E15BB3143005D9719 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A75B8D8D15BB3143005D9719 /* UIKit.framework */; };
@@ -67,9 +66,8 @@
 		A736514B15BC0235001D6890 /* twitter-bird-white-on-blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "twitter-bird-white-on-blue.png"; sourceTree = "<group>"; };
 		A736514F15BC048E001D6890 /* TextDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextDetailViewController.h; sourceTree = "<group>"; };
 		A736515015BC048E001D6890 /* TextDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextDetailViewController.m; sourceTree = "<group>"; };
-		A741A07D15BC81D6003CEFD0 /* ecsplash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ecsplash.png; path = ../../../../../../../../Desktop/ecsplash.png; sourceTree = "<group>"; };
-		A741A08115BC81F6003CEFD0 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		A741A08415BC8291003CEFD0 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		A741A08115BC81F6003CEFD0 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
+		A741A08415BC8291003CEFD0 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
 		A75B8D8915BB3143005D9719 /* iosdevcamp2012.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosdevcamp2012.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A75B8D8D15BB3143005D9719 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A75B8D8F15BB3143005D9719 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -199,8 +197,6 @@
 		A75B8D7E15BB3142005D9719 = {
 			isa = PBXGroup;
 			children = (
-				A741A08415BC8291003CEFD0 /* Default@2x.png */,
-				A741A08115BC81F6003CEFD0 /* Default.png */,
 				A75B8D9515BB3143005D9719 /* iosdevcamp2012 */,
 				A75B8DBA15BB3143005D9719 /* iosdevcamp2012Tests */,
 				A75B8D8C15BB3143005D9719 /* Frameworks */,
@@ -320,7 +316,8 @@
 		A7B7179315BC6BDB00294E15 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				A741A07D15BC81D6003CEFD0 /* ecsplash.png */,
+				A741A08415BC8291003CEFD0 /* Default@2x.png */,
+				A741A08115BC81F6003CEFD0 /* Default.png */,
 				A7B7179115BC6BBF00294E15 /* Icon@2x.png */,
 				A7B7178F15BC6BB400294E15 /* Icon.png */,
 				A736514B15BC0235001D6890 /* twitter-bird-white-on-blue.png */,
@@ -488,7 +485,6 @@
 				A736514C15BC0235001D6890 /* twitter-bird-white-on-blue.png in Resources */,
 				A7B7179015BC6BB400294E15 /* Icon.png in Resources */,
 				A7B7179215BC6BBF00294E15 /* Icon@2x.png in Resources */,
-				A741A07E15BC81D6003CEFD0 /* ecsplash.png in Resources */,
 				A741A08315BC8287003CEFD0 /* Default.png in Resources */,
 				A741A08515BC8291003CEFD0 /* Default@2x.png in Resources */,
 			);
