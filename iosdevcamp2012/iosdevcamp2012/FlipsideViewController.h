@@ -16,6 +16,7 @@
 @interface FlipsideViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet id <FlipsideViewControllerDelegate> delegate;
+@property (nonatomic, strong) NSArray *sectionArray;
 
 - (IBAction)done:(id)sender;
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;

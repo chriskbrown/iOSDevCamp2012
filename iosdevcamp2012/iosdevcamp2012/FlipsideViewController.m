@@ -10,15 +10,19 @@
 @implementation FlipsideViewController
 
 @synthesize delegate = _delegate;
+@synthesize sectionArray;
 
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 3;
+    
+    sectionArray =  [NSArray arrayWithObjects:@"About Us", @"Help", @"Website", nil];
+	
+	return [sectionArray count];
 }
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    // id <NSFetchedResultsSectionInfo> sectionInfo = [[self.fetchedResultsController sections] objectAtIndex:section];
+    
     return 3;
 }
 
@@ -40,14 +44,24 @@
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
     
-    
-    if([indexPath row] == 0)
+    if (indexPath.section == 0) 
     {
-       cell.textLabel.text = @"Yo"; 
+        if([indexPath row] == 0)
+        {
+           cell.textLabel.text = @"Yo"; 
+        }
+        else
+        {
+            cell.textLabel.text = @"Other cell";
+        }
+    }
+    else if (indexPath.section == 1)
+    {
+        
     }
     else
     {
-        cell.textLabel.text = @"Other cell";
+        
     }
 }
 
