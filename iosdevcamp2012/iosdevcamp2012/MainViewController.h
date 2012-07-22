@@ -6,7 +6,6 @@
 //
 
 #import "FlipsideViewController.h"
-
 #import <CoreData/CoreData.h>
 
 @interface MainViewController : UIViewController <FlipsideViewControllerDelegate>

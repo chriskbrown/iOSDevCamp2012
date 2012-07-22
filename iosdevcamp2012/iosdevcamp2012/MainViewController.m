@@ -6,6 +6,7 @@
 //
 
 #import "MainViewController.h"
+#import "CameraController.h"
 
 @implementation MainViewController
 
@@ -15,6 +16,12 @@
 {
     [super didReceiveMemoryWarning];
     // Release any cached data, images, etc that aren't in use.
+}
+
+#pragma mark - Event handling
+
+- (IBAction)capturePressed:(id) sender {
+    // Change to CameraController
 }
 
 #pragma mark - View lifecycle
