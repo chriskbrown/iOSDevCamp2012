@@ -3,7 +3,6 @@
 //  iosdevcamp2012
 //
 //  Created by Christopher Brown on 7/21/12.
-//  Copyright (c) 2012 Millennial Media. All rights reserved.
 //
 
 #import "MainViewController.h"
@@ -46,6 +45,12 @@
     
     NSString *body = [[NSString alloc] initWithString:@"This is some sample text"];
     [textEntryInfo setValue:body forKey:@"body"];
+    
+    //NSDate *date = ;
+    //NSTimeInterval nowTimeIntervalSince1970 = [[NSDate date] timeIntervalSince1970];
+    
+    [sessionInfo setValue:[NSDate date] forKey:@"begintime"];
+    
    // }
     
 //    [failedBankDetails setValue:[NSDate date] forKey:@"closeDate"];

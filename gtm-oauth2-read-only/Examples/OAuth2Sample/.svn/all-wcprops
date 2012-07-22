@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/86/trunk/Examples/OAuth2Sample
+END
+main.m
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/11/trunk/Examples/OAuth2Sample/main.m
+END
+OAuth2SampleAppController.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/11/trunk/Examples/OAuth2Sample/OAuth2SampleAppController.h
+END
+OAuth2SampleAppController.m
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/86/trunk/Examples/OAuth2Sample/OAuth2SampleAppController.m
+END
+Info.plist
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/11/trunk/Examples/OAuth2Sample/Info.plist
+END
+OAuth2Sample_Prefix.pch
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/11/trunk/Examples/OAuth2Sample/OAuth2Sample_Prefix.pch
+END
+MainMenu.xib
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/11/trunk/Examples/OAuth2Sample/MainMenu.xib
+END
