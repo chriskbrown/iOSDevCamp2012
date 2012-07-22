@@ -26,6 +26,11 @@
 		A75B8DC215BB3143005D9719 /* iosdevcamp2012Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = A75B8DC115BB3143005D9719 /* iosdevcamp2012Tests.m */; };
 		A77A768F15BB879A00A8D57E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A77A768E15BB879A00A8D57E /* SystemConfiguration.framework */; };
 		A77A769215BB87A000A8D57E /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A77A769115BB87A000A8D57E /* Security.framework */; };
+		A7B5ABA415BB99AE007878B6 /* GTMHTTPFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B5AB9C15BB99AE007878B6 /* GTMHTTPFetcher.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A7B5ABA515BB99AE007878B6 /* GTMOAuth2Authentication.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B5AB9E15BB99AE007878B6 /* GTMOAuth2Authentication.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A7B5ABA615BB99AE007878B6 /* GTMOAuth2SignIn.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B5ABA015BB99AE007878B6 /* GTMOAuth2SignIn.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A7B5ABA715BB99AE007878B6 /* GTMOAuth2ViewControllerTouch.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B5ABA215BB99AE007878B6 /* GTMOAuth2ViewControllerTouch.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A7B5ABA815BB99AE007878B6 /* GTMOAuth2ViewTouch.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7B5ABA315BB99AE007878B6 /* GTMOAuth2ViewTouch.xib */; };
 		D8939E6415BB4C360016AF67 /* libtesseract_full.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D8939E6315BB4C360016AF67 /* libtesseract_full.a */; };
 		D8939E6515BB4C360016AF67 /* libtesseract_full.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D8939E6315BB4C360016AF67 /* libtesseract_full.a */; };
 		D8939E9815BB51FB0016AF67 /* CameraController.mm in Sources */ = {isa = PBXBuildFile; fileRef = D8939E9715BB51FB0016AF67 /* CameraController.mm */; };
@@ -85,6 +90,15 @@
 		A75B8DC115BB3143005D9719 /* iosdevcamp2012Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iosdevcamp2012Tests.m; sourceTree = "<group>"; };
 		A77A768E15BB879A00A8D57E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		A77A769115BB87A000A8D57E /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		A7B5AB9B15BB99AE007878B6 /* GTMHTTPFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMHTTPFetcher.h; sourceTree = "<group>"; };
+		A7B5AB9C15BB99AE007878B6 /* GTMHTTPFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMHTTPFetcher.m; sourceTree = "<group>"; };
+		A7B5AB9D15BB99AE007878B6 /* GTMOAuth2Authentication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMOAuth2Authentication.h; sourceTree = "<group>"; };
+		A7B5AB9E15BB99AE007878B6 /* GTMOAuth2Authentication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMOAuth2Authentication.m; sourceTree = "<group>"; };
+		A7B5AB9F15BB99AE007878B6 /* GTMOAuth2SignIn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMOAuth2SignIn.h; sourceTree = "<group>"; };
+		A7B5ABA015BB99AE007878B6 /* GTMOAuth2SignIn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMOAuth2SignIn.m; sourceTree = "<group>"; };
+		A7B5ABA115BB99AE007878B6 /* GTMOAuth2ViewControllerTouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMOAuth2ViewControllerTouch.h; sourceTree = "<group>"; };
+		A7B5ABA215BB99AE007878B6 /* GTMOAuth2ViewControllerTouch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMOAuth2ViewControllerTouch.m; sourceTree = "<group>"; };
+		A7B5ABA315BB99AE007878B6 /* GTMOAuth2ViewTouch.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GTMOAuth2ViewTouch.xib; sourceTree = "<group>"; };
 		D8939E6315BB4C360016AF67 /* libtesseract_full.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libtesseract_full.a; sourceTree = "<group>"; };
 		D8939E9615BB51FB0016AF67 /* CameraController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraController.h; sourceTree = "<group>"; };
 		D8939E9715BB51FB0016AF67 /* CameraController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CameraController.mm; sourceTree = "<group>"; };
@@ -168,6 +182,7 @@
 		A75B8D9515BB3143005D9719 /* iosdevcamp2012 */ = {
 			isa = PBXGroup;
 			children = (
+				A7B5ABAA15BB99C3007878B6 /* Singly */,
 				D8939EB515BB7E820016AF67 /* baseapi.h */,
 				D8939E9C15BB7E740016AF67 /* tessdata */,
 				D8939E9515BB4D560016AF67 /* libs */,
@@ -214,6 +229,30 @@
 				A75B8DBD15BB3143005D9719 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A7B5ABAA15BB99C3007878B6 /* Singly */ = {
+			isa = PBXGroup;
+			children = (
+				A7B5ABAB15BB99CE007878B6 /* Oauth2 */,
+			);
+			name = Singly;
+			sourceTree = "<group>";
+		};
+		A7B5ABAB15BB99CE007878B6 /* Oauth2 */ = {
+			isa = PBXGroup;
+			children = (
+				A7B5AB9B15BB99AE007878B6 /* GTMHTTPFetcher.h */,
+				A7B5AB9C15BB99AE007878B6 /* GTMHTTPFetcher.m */,
+				A7B5AB9D15BB99AE007878B6 /* GTMOAuth2Authentication.h */,
+				A7B5AB9E15BB99AE007878B6 /* GTMOAuth2Authentication.m */,
+				A7B5AB9F15BB99AE007878B6 /* GTMOAuth2SignIn.h */,
+				A7B5ABA015BB99AE007878B6 /* GTMOAuth2SignIn.m */,
+				A7B5ABA115BB99AE007878B6 /* GTMOAuth2ViewControllerTouch.h */,
+				A7B5ABA215BB99AE007878B6 /* GTMOAuth2ViewControllerTouch.m */,
+				A7B5ABA315BB99AE007878B6 /* GTMOAuth2ViewTouch.xib */,
+			);
+			name = Oauth2;
 			sourceTree = "<group>";
 		};
 		D8939E9515BB4D560016AF67 /* libs */ = {
@@ -320,6 +359,7 @@
 				D8939EAF15BB7E740016AF67 /* eng.unicharset in Resources */,
 				D8939EB115BB7E740016AF67 /* eng.user-words in Resources */,
 				D8939EB315BB7E740016AF67 /* eng.word-dawg in Resources */,
+				A7B5ABA815BB99AE007878B6 /* GTMOAuth2ViewTouch.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,6 +408,10 @@
 				A75B8DA915BB3143005D9719 /* MainViewController.m in Sources */,
 				A75B8DAC15BB3143005D9719 /* FlipsideViewController.m in Sources */,
 				D8939E9815BB51FB0016AF67 /* CameraController.mm in Sources */,
+				A7B5ABA415BB99AE007878B6 /* GTMHTTPFetcher.m in Sources */,
+				A7B5ABA515BB99AE007878B6 /* GTMOAuth2Authentication.m in Sources */,
+				A7B5ABA615BB99AE007878B6 /* GTMOAuth2SignIn.m in Sources */,
+				A7B5ABA715BB99AE007878B6 /* GTMOAuth2ViewControllerTouch.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
