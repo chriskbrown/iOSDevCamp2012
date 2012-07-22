@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CameraController : UIView
+@interface CameraController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+
+- (NSString *) stringFromImage:(UIImage *)img;
+- (NSString *) applicationDocumentsDirectory;
 
 @end

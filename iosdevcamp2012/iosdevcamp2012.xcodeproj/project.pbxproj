@@ -24,6 +24,27 @@
 		A75B8DB715BB3143005D9719 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A75B8D9315BB3143005D9719 /* CoreData.framework */; };
 		A75B8DBF15BB3143005D9719 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A75B8DBD15BB3143005D9719 /* InfoPlist.strings */; };
 		A75B8DC215BB3143005D9719 /* iosdevcamp2012Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = A75B8DC115BB3143005D9719 /* iosdevcamp2012Tests.m */; };
+		D8939E6415BB4C360016AF67 /* libtesseract_full.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D8939E6315BB4C360016AF67 /* libtesseract_full.a */; };
+		D8939E6515BB4C360016AF67 /* libtesseract_full.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D8939E6315BB4C360016AF67 /* libtesseract_full.a */; };
+		D8939E9815BB51FB0016AF67 /* CameraController.mm in Sources */ = {isa = PBXBuildFile; fileRef = D8939E9715BB51FB0016AF67 /* CameraController.mm */; };
+		D8939E9915BB51FB0016AF67 /* CameraController.mm in Sources */ = {isa = PBXBuildFile; fileRef = D8939E9715BB51FB0016AF67 /* CameraController.mm */; };
+		D8939E9B15BB6E530016AF67 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8939E9A15BB6E530016AF67 /* MobileCoreServices.framework */; };
+		D8939EA515BB7E740016AF67 /* eng.DangAmbigs in Resources */ = {isa = PBXBuildFile; fileRef = D8939E9D15BB7E740016AF67 /* eng.DangAmbigs */; };
+		D8939EA615BB7E740016AF67 /* eng.DangAmbigs in Resources */ = {isa = PBXBuildFile; fileRef = D8939E9D15BB7E740016AF67 /* eng.DangAmbigs */; };
+		D8939EA715BB7E740016AF67 /* eng.freq-dawg in Resources */ = {isa = PBXBuildFile; fileRef = D8939E9E15BB7E740016AF67 /* eng.freq-dawg */; };
+		D8939EA815BB7E740016AF67 /* eng.freq-dawg in Resources */ = {isa = PBXBuildFile; fileRef = D8939E9E15BB7E740016AF67 /* eng.freq-dawg */; };
+		D8939EA915BB7E740016AF67 /* eng.inttemp in Resources */ = {isa = PBXBuildFile; fileRef = D8939E9F15BB7E740016AF67 /* eng.inttemp */; };
+		D8939EAA15BB7E740016AF67 /* eng.inttemp in Resources */ = {isa = PBXBuildFile; fileRef = D8939E9F15BB7E740016AF67 /* eng.inttemp */; };
+		D8939EAB15BB7E740016AF67 /* eng.normproto in Resources */ = {isa = PBXBuildFile; fileRef = D8939EA015BB7E740016AF67 /* eng.normproto */; };
+		D8939EAC15BB7E740016AF67 /* eng.normproto in Resources */ = {isa = PBXBuildFile; fileRef = D8939EA015BB7E740016AF67 /* eng.normproto */; };
+		D8939EAD15BB7E740016AF67 /* eng.pffmtable in Resources */ = {isa = PBXBuildFile; fileRef = D8939EA115BB7E740016AF67 /* eng.pffmtable */; };
+		D8939EAE15BB7E740016AF67 /* eng.pffmtable in Resources */ = {isa = PBXBuildFile; fileRef = D8939EA115BB7E740016AF67 /* eng.pffmtable */; };
+		D8939EAF15BB7E740016AF67 /* eng.unicharset in Resources */ = {isa = PBXBuildFile; fileRef = D8939EA215BB7E740016AF67 /* eng.unicharset */; };
+		D8939EB015BB7E740016AF67 /* eng.unicharset in Resources */ = {isa = PBXBuildFile; fileRef = D8939EA215BB7E740016AF67 /* eng.unicharset */; };
+		D8939EB115BB7E740016AF67 /* eng.user-words in Resources */ = {isa = PBXBuildFile; fileRef = D8939EA315BB7E740016AF67 /* eng.user-words */; };
+		D8939EB215BB7E740016AF67 /* eng.user-words in Resources */ = {isa = PBXBuildFile; fileRef = D8939EA315BB7E740016AF67 /* eng.user-words */; };
+		D8939EB315BB7E740016AF67 /* eng.word-dawg in Resources */ = {isa = PBXBuildFile; fileRef = D8939EA415BB7E740016AF67 /* eng.word-dawg */; };
+		D8939EB415BB7E740016AF67 /* eng.word-dawg in Resources */ = {isa = PBXBuildFile; fileRef = D8939EA415BB7E740016AF67 /* eng.word-dawg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +81,19 @@
 		A75B8DBE15BB3143005D9719 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A75B8DC015BB3143005D9719 /* iosdevcamp2012Tests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iosdevcamp2012Tests.h; sourceTree = "<group>"; };
 		A75B8DC115BB3143005D9719 /* iosdevcamp2012Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iosdevcamp2012Tests.m; sourceTree = "<group>"; };
+		D8939E6315BB4C360016AF67 /* libtesseract_full.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libtesseract_full.a; sourceTree = "<group>"; };
+		D8939E9615BB51FB0016AF67 /* CameraController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraController.h; sourceTree = "<group>"; };
+		D8939E9715BB51FB0016AF67 /* CameraController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CameraController.mm; sourceTree = "<group>"; };
+		D8939E9A15BB6E530016AF67 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		D8939E9D15BB7E740016AF67 /* eng.DangAmbigs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = eng.DangAmbigs; sourceTree = "<group>"; };
+		D8939E9E15BB7E740016AF67 /* eng.freq-dawg */ = {isa = PBXFileReference; lastKnownFileType = file; path = "eng.freq-dawg"; sourceTree = "<group>"; };
+		D8939E9F15BB7E740016AF67 /* eng.inttemp */ = {isa = PBXFileReference; lastKnownFileType = file; path = eng.inttemp; sourceTree = "<group>"; };
+		D8939EA015BB7E740016AF67 /* eng.normproto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = eng.normproto; sourceTree = "<group>"; };
+		D8939EA115BB7E740016AF67 /* eng.pffmtable */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = eng.pffmtable; sourceTree = "<group>"; };
+		D8939EA215BB7E740016AF67 /* eng.unicharset */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = eng.unicharset; sourceTree = "<group>"; };
+		D8939EA315BB7E740016AF67 /* eng.user-words */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "eng.user-words"; sourceTree = "<group>"; };
+		D8939EA415BB7E740016AF67 /* eng.word-dawg */ = {isa = PBXFileReference; lastKnownFileType = file; path = "eng.word-dawg"; sourceTree = "<group>"; };
+		D8939EB515BB7E820016AF67 /* baseapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = baseapi.h; path = tessdata/baseapi.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,10 +101,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8939E9B15BB6E530016AF67 /* MobileCoreServices.framework in Frameworks */,
 				A75B8D8E15BB3143005D9719 /* UIKit.framework in Frameworks */,
 				A75B8D9015BB3143005D9719 /* Foundation.framework in Frameworks */,
 				A75B8D9215BB3143005D9719 /* CoreGraphics.framework in Frameworks */,
 				A75B8D9415BB3143005D9719 /* CoreData.framework in Frameworks */,
+				D8939E6415BB4C360016AF67 /* libtesseract_full.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +118,7 @@
 				A75B8DB515BB3143005D9719 /* UIKit.framework in Frameworks */,
 				A75B8DB615BB3143005D9719 /* Foundation.framework in Frameworks */,
 				A75B8DB715BB3143005D9719 /* CoreData.framework in Frameworks */,
+				D8939E6515BB4C360016AF67 /* libtesseract_full.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,6 +147,7 @@
 		A75B8D8C15BB3143005D9719 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D8939E9A15BB6E530016AF67 /* MobileCoreServices.framework */,
 				A75B8D8D15BB3143005D9719 /* UIKit.framework */,
 				A75B8D8F15BB3143005D9719 /* Foundation.framework */,
 				A75B8D9115BB3143005D9719 /* CoreGraphics.framework */,
@@ -122,11 +160,16 @@
 		A75B8D9515BB3143005D9719 /* iosdevcamp2012 */ = {
 			isa = PBXGroup;
 			children = (
+				D8939EB515BB7E820016AF67 /* baseapi.h */,
+				D8939E9C15BB7E740016AF67 /* tessdata */,
+				D8939E9515BB4D560016AF67 /* libs */,
 				A75B8D9E15BB3143005D9719 /* AppDelegate.h */,
 				A75B8D9F15BB3143005D9719 /* AppDelegate.m */,
 				A75B8DA115BB3143005D9719 /* MainStoryboard.storyboard */,
 				A75B8DA715BB3143005D9719 /* MainViewController.h */,
 				A75B8DA815BB3143005D9719 /* MainViewController.m */,
+				D8939E9615BB51FB0016AF67 /* CameraController.h */,
+				D8939E9715BB51FB0016AF67 /* CameraController.mm */,
 				A75B8DAA15BB3143005D9719 /* FlipsideViewController.h */,
 				A75B8DAB15BB3143005D9719 /* FlipsideViewController.m */,
 				A75B8DA415BB3143005D9719 /* iosdevcamp2012.xcdatamodeld */,
@@ -163,6 +206,29 @@
 				A75B8DBD15BB3143005D9719 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D8939E9515BB4D560016AF67 /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				D8939E6315BB4C360016AF67 /* libtesseract_full.a */,
+			);
+			name = libs;
+			sourceTree = "<group>";
+		};
+		D8939E9C15BB7E740016AF67 /* tessdata */ = {
+			isa = PBXGroup;
+			children = (
+				D8939E9D15BB7E740016AF67 /* eng.DangAmbigs */,
+				D8939E9E15BB7E740016AF67 /* eng.freq-dawg */,
+				D8939E9F15BB7E740016AF67 /* eng.inttemp */,
+				D8939EA015BB7E740016AF67 /* eng.normproto */,
+				D8939EA115BB7E740016AF67 /* eng.pffmtable */,
+				D8939EA215BB7E740016AF67 /* eng.unicharset */,
+				D8939EA315BB7E740016AF67 /* eng.user-words */,
+				D8939EA415BB7E740016AF67 /* eng.word-dawg */,
+			);
+			path = tessdata;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,6 +304,14 @@
 			files = (
 				A75B8D9A15BB3143005D9719 /* InfoPlist.strings in Resources */,
 				A75B8DA315BB3143005D9719 /* MainStoryboard.storyboard in Resources */,
+				D8939EA515BB7E740016AF67 /* eng.DangAmbigs in Resources */,
+				D8939EA715BB7E740016AF67 /* eng.freq-dawg in Resources */,
+				D8939EA915BB7E740016AF67 /* eng.inttemp in Resources */,
+				D8939EAB15BB7E740016AF67 /* eng.normproto in Resources */,
+				D8939EAD15BB7E740016AF67 /* eng.pffmtable in Resources */,
+				D8939EAF15BB7E740016AF67 /* eng.unicharset in Resources */,
+				D8939EB115BB7E740016AF67 /* eng.user-words in Resources */,
+				D8939EB315BB7E740016AF67 /* eng.word-dawg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,6 +320,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				A75B8DBF15BB3143005D9719 /* InfoPlist.strings in Resources */,
+				D8939EA615BB7E740016AF67 /* eng.DangAmbigs in Resources */,
+				D8939EA815BB7E740016AF67 /* eng.freq-dawg in Resources */,
+				D8939EAA15BB7E740016AF67 /* eng.inttemp in Resources */,
+				D8939EAC15BB7E740016AF67 /* eng.normproto in Resources */,
+				D8939EAE15BB7E740016AF67 /* eng.pffmtable in Resources */,
+				D8939EB015BB7E740016AF67 /* eng.unicharset in Resources */,
+				D8939EB215BB7E740016AF67 /* eng.user-words in Resources */,
+				D8939EB415BB7E740016AF67 /* eng.word-dawg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,6 +359,7 @@
 				A75B8DA615BB3143005D9719 /* iosdevcamp2012.xcdatamodeld in Sources */,
 				A75B8DA915BB3143005D9719 /* MainViewController.m in Sources */,
 				A75B8DAC15BB3143005D9719 /* FlipsideViewController.m in Sources */,
+				D8939E9815BB51FB0016AF67 /* CameraController.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,6 +368,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A75B8DC215BB3143005D9719 /* iosdevcamp2012Tests.m in Sources */,
+				D8939E9915BB51FB0016AF67 /* CameraController.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,6 +461,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iosdevcamp2012/iosdevcamp2012-Prefix.pch";
 				INFOPLIST_FILE = "iosdevcamp2012/iosdevcamp2012-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/iosdevcamp2012\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -388,6 +476,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iosdevcamp2012/iosdevcamp2012-Prefix.pch";
 				INFOPLIST_FILE = "iosdevcamp2012/iosdevcamp2012-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/iosdevcamp2012\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -404,6 +496,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iosdevcamp2012/iosdevcamp2012-Prefix.pch";
 				INFOPLIST_FILE = "iosdevcamp2012Tests/iosdevcamp2012Tests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/iosdevcamp2012\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
@@ -421,6 +517,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iosdevcamp2012/iosdevcamp2012-Prefix.pch";
 				INFOPLIST_FILE = "iosdevcamp2012Tests/iosdevcamp2012Tests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/iosdevcamp2012\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
@@ -446,6 +546,7 @@
 				A75B8DC715BB3143005D9719 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A75B8DC815BB3143005D9719 /* Build configuration list for PBXNativeTarget "iosdevcamp2012Tests" */ = {
 			isa = XCConfigurationList;
@@ -454,6 +555,7 @@
 				A75B8DCA15BB3143005D9719 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
