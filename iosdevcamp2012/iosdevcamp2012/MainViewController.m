@@ -22,7 +22,8 @@
 #pragma mark - Event handling
 
 - (IBAction)capturePressed:(id) sender {
-    // Change to CameraController
+    CameraController *cc = [CameraController new];
+    [cc launchCamera:self];
 }
 
 #pragma mark - View lifecycle
