@@ -45,26 +45,17 @@
     setenv("TESSDATA_PREFIX", [[dataPath stringByAppendingString:@"/"] UTF8String], 1);
     
     tesseract::TessBaseAPI* tess = new tesseract::TessBaseAPI();
-    tess->Init([ dataPath cStringUsingEncoding:NSUTF8StringEncoding], "../eng" );
+    tess->Init([ dataPath cStringUsingEncoding:NSUTF8StringEncoding], "eng" );
     
     return tess;
 }
 
 - (NSString *) stringFromImage:(UIImage *)img {
-    // This was jeeped from a certain Mr. Nolan Brown.
+    // This was jeeped from a certain Mr. Nolan Brown. I hear he's a tool.
+    // https://github.com/nolanbrown/Tesseract-iPhone-Demo
+    
     uint32_t *pixels;
     tesseract::TessBaseAPI *tess = [self initTess];
-   
-    
-    //****** CRASH HERE. SIGABRT
-    
-    /*
-     Error opening data file /var/mobile/Applications/48F6D76E-EDA8-4C15-AAFC-3DEEEB3251BC/Documents/../iosdevcamp2012.app/tessdata/../eng.traineddata
-     iosdevcamp2012(2625,0x3ed6ad98) malloc: *** error for object 0x32b17717: pointer being freed was not allocated
-     *** set a breakpoint in malloc_error_break to debug
-     
-     */
-    
     
     CGSize size = [img size];
     int width = size.width;
