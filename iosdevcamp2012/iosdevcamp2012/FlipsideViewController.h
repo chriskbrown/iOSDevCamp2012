@@ -18,5 +18,6 @@
 @property (weak, nonatomic) IBOutlet id <FlipsideViewControllerDelegate> delegate;
 
 - (IBAction)done:(id)sender;
+- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 
 @end
