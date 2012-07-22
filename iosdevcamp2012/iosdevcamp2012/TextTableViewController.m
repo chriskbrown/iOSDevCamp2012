@@ -3,8 +3,21 @@
 //  iosdevcamp2012
 //
 //  Created by Christopher Brown on 7/21/12.
-//  Copyright (c) 2012 Millennial Media. All rights reserved.
 //
+//  Copyright 2012 Christopher Brown
+//
+//  Licensed under the Apache License, Version 2.0 (the "License");
+//  you may not use this file except in compliance with the License.
+//  You may obtain a copy of the License at
+//
+//  http://www.apache.org/licenses/LICENSE-2.0
+//
+//  Unless required by applicable law or agreed to in writing, software
+//  distributed under the License is distributed on an "AS IS" BASIS,
+//  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//  See the License for the specific language governing permissions and
+//  limitations under the License.
+
 
 #import "TextTableViewController.h"
 
@@ -21,7 +34,7 @@
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize searchFetchedResultsController;
 @synthesize searchWasActive;
-//@synthesize searchResults;
+@synthesize sessionData;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -40,7 +53,6 @@
     [super didReceiveMemoryWarning];
     
     // Release any cached data, images, etc that aren't in use.
-   // self.searchWasActive = [self.searchDisplayController isActive];
 }
 
 #pragma mark - View lifecycle
@@ -49,7 +61,6 @@
 {
     [super viewDidLoad];
     [self.navigationController setNavigationBarHidden:NO animated:YES];
-    //[self.navigationController 
     self.title = @"Captured Text";
     
     NSLog(@"view did load");
@@ -109,26 +120,25 @@
     if(self.managedObjectContext == nil) 
     {
         NSLog(@"Empty context");
-       // self.managedObjectContext = [[UIApplication sharedApplication]
         return 0;
     }
-        NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-        NSEntityDescription *entity = [NSEntityDescription entityForName:@"TextEntry" inManagedObjectContext:self.managedObjectContext];
-        [fetchRequest setEntity:entity];
     
-    NSSortDescriptor *sort = [[NSSortDescriptor alloc] initWithKey:@"Session.begintime" ascending:NO];
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Session" inManagedObjectContext:self.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    
+    NSSortDescriptor *sort = [[NSSortDescriptor alloc] initWithKey:@"begintime" ascending:NO];
     [fetchRequest setSortDescriptors:[NSArray arrayWithObject:sort]];
         
     [fetchRequest setFetchBatchSize:20];
     
-    NSFetchedResultsController *theFetchedResultsController =
+    NSFetchedResultsController *frc =
     [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
-                                        managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil
-                                                   cacheName:nil];
-    self.fetchedResultsController = theFetchedResultsController;
+                                        managedObjectContext:self.managedObjectContext 
+                                        sectionNameKeyPath:nil
+                                        cacheName:nil];
+    self.fetchedResultsController = frc;
     _fetchedResultsController.delegate = self;
-    
-    NSLog(@"FRC");
     
     return _fetchedResultsController;    
 }
@@ -143,8 +153,21 @@
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
     Session *session = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = session.location;
-    NSLog(@"Cell text:%@", session.location);
+    cell.textLabel.text = session.text;
+    
+    //Format the timestamp for display
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    //[formatter setDateFormat:@"yyyy"];
+    [formatter setDateFormat:@"yyyy-MM-dd 'at' HH:mm:ss"];
+    
+    //Optionally for time zone converstions
+    [formatter setTimeZone:[NSTimeZone timeZoneWithName:@"PDT"]];
+    
+    NSString *stringFromDate = [formatter stringFromDate:session.begintime];
+    
+    
+    cell.detailTextLabel.text = stringFromDate;
+    NSLog(@"Cell text: %@  %@", session.text, stringFromDate);
 }
 
 
@@ -242,8 +265,24 @@
 
 
 
-#pragma mark -
+#pragma mark - Segue
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    
+    NSLog(@"Segue!!!!!!!");
+
+    
+    NSLog(@"controllerProgram:: prepareForSegue: %@", segue.identifier );
+    
+    if ([[segue identifier] isEqualToString:@"showDetailTextView"]) {
+        if ([segue.destinationViewController respondsToSelector:@selector(setLabelText:)]) {
+            [segue.destinationViewController performSelector:@selector(setLabelText:) 
+                                                  withObject:sessionData];
+        }     
+    
+    }
+}
 
 
 

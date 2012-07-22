@@ -4,6 +4,19 @@
 //
 //  Created by Christopher Brown on 7/21/12.
 //
+//  Copyright 2012 Christopher Brown
+//
+//  Licensed under the Apache License, Version 2.0 (the "License");
+//  you may not use this file except in compliance with the License.
+//  You may obtain a copy of the License at
+//
+//  http://www.apache.org/licenses/LICENSE-2.0
+//
+//  Unless required by applicable law or agreed to in writing, software
+//  distributed under the License is distributed on an "AS IS" BASIS,
+//  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//  See the License for the specific language governing permissions and
+//  limitations under the License.
 
 #import "MainViewController.h"
 #import "CameraController.h"
@@ -56,29 +69,12 @@
 
 
 - (IBAction)capturePressed:(id) sender {
-//    CameraController *cc = [CameraController new];
-//    [cc launchCamera:self];
-    
     
     UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Choose an image source" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Camera", @"Photo Library",nil];
     
     [actionSheet setActionSheetStyle:UIActionSheetStyleBlackTranslucent];
-
-    //[actionSheet showInView:self.parentViewController.view];
     
     [actionSheet showInView:self.view];
-    
-    
-//        if ([UIImagePickerController isSourceTypeAvailable:
-//             UIImagePickerControllerSourceTypeCamera] == NO) {
-//            NSLog( @"No camera!" );
-//            return;
-//        }
-//        
-//        ipc = [UIImagePickerController new];
-//        [ipc setSourceType:UIImagePickerControllerCameraCaptureModeVideo];
-//        [ipc setDelegate:self];
-//        [self presentModalViewController:ipc animated:YES];
 
 }
 
@@ -91,10 +87,6 @@
     NSManagedObject *sessionInfo = [NSEntityDescription
                                     insertNewObjectForEntityForName:@"Session"
                                     inManagedObjectContext:self.managedObjectContext];
-
-//    NSManagedObject *textEntryInfo = [NSEntityDescription
-//                                          insertNewObjectForEntityForName:@"TextEntry"
-//                                          inManagedObjectContext:self.managedObjectContext];
     
     NSString *locDescription = [[NSString alloc] initWithString:@"This is a description of a location"];
     [sessionInfo setValue:locDescription forKey:@"location"];
@@ -126,18 +118,7 @@
         NSLog(@"Location: %@", [sessionObject valueForKey:@"location"]);
         NSLog(@"Timestamp: %@", [sessionObject valueForKey:@"begintime"]);
         NSLog(@"Text body: %@", [sessionObject valueForKey:@"text"]);
-    }
-    
-//    NSEntityDescription *textEntryEntity = [NSEntityDescription
-//                                          entityForName:@"TextEntry" inManagedObjectContext:self.managedObjectContext];
-//    [fetchRequest setEntity:textEntryEntity];
-//    NSArray *fetchedObjects2 = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
-//    
-//    for (NSManagedObject *textEntryObject in fetchedObjects2) {
-//        NSLog(@"Text body: %@", [textEntryObject valueForKey:@"body"]);
-//    }
-//    
-    
+    } 
 }
 
 - (void)viewDidUnload
@@ -200,25 +181,18 @@
     NSLog(@"Segue!!!!!!!");
     
     if ([[segue identifier] isEqualToString:@"showAlternate"]) {
-        [[segue destinationViewController] setDelegate:self];
+        //[[segue destinationViewController] setDelegate:self];
+        CameraController *cc = (CameraController *)[segue destinationViewController];
+        [cc setDelegate:self];
+        cc.managedObjectContext = self.managedObjectContext;
     }
-    
-//    if ([[segue identifier] isEqualToString:@"CameraSeque"]) {
-//        [[segue destinationViewController] setDelegate:self];
-//    }
+
     NSLog(@"controllerProgram:: prepareForSegue: %@", segue.identifier );
     
     if ([[segue identifier] isEqualToString:@"showTextTable"]) {
         
-        NSLog(@"Segue ident" );
-               
-        //[[segue destinationViewController] setDelegate:self];
-        
-//        UINavigationController *nv = (UINavigationController *)[segue destinationViewController];
-//        [nv setDelegate:self];
         TextTableViewController *ttvc = (TextTableViewController *)[segue destinationViewController];
         ttvc.managedObjectContext = self.managedObjectContext;
-        //[ttvc setDelegate:self];
     }
 }
 

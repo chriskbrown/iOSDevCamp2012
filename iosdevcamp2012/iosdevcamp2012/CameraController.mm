@@ -2,9 +2,21 @@
 //  CameraController.m
 //  iosdevcamp2012
 //
-//  Created by Mark Burger on 7/21/12.
-//  Copyright (c) 2012 Millennial Media. All rights reserved.
+//  Created by Mark Burger on 7/21/12
 //
+//  Copyright 2012 Christopher Brown
+//
+//  Licensed under the Apache License, Version 2.0 (the "License");
+//  you may not use this file except in compliance with the License.
+//  You may obtain a copy of the License at
+//
+//  http://www.apache.org/licenses/LICENSE-2.0
+//
+//  Unless required by applicable law or agreed to in writing, software
+//  distributed under the License is distributed on an "AS IS" BASIS,
+//  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//  See the License for the specific language governing permissions and
+//  limitations under the License.
 
 #import <MobileCoreServices/UTCoreTypes.h>
 #import <MediaPlayer/MPMoviePlayerController.h>
@@ -99,15 +111,13 @@
     NSString *type = [info objectForKey:UIImagePickerControllerMediaType];
     if ( [type isEqualToString:@"public.image"] ) {
         sfi = [self stringFromImage:[info objectForKey:UIImagePickerControllerOriginalImage]];
-        //NSLog(@"%@", sfi);
+        NSLog(@"%@", sfi);
         [self saveText:sfi];
         
         NSLog( @"Image finished.");
     } else if ( [type isEqualToString:@"public.movie"] ) {
         MPMoviePlayerController *mpc = [MPMoviePlayerController new];
         [mpc setContentURL:[info objectForKey:UIImagePickerControllerMediaURL] ];
-        
-        NSMutableArray *mainma = [NSMutableArray new];
         
         UIImage *img;
         int i, j, k;
@@ -160,6 +170,28 @@
 
 - (void)saveText:(NSString *)text
 {
+    
+
+    
+    if(self.managedObjectContext == nil) 
+    {
+        NSLog(@"Empty context");
+        AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+        self.managedObjectContext = delegate.managedObjectContext;
+
+        //self.managedObjectContext = [(AppDelegate *)[[UIApplication sharedApplication] delegate]managedObjectContext]; 
+        
+//        self.managedObjectContext = [(AppDelegate *)[[[UIApplication sharedApplication] delegate] managedObjectContext]];
+        
+        NSLog(@"After managedObjectContext: %@",  self.managedObjectContext);
+     
+    }
+    
+    NSLog(@"Context: %@",self.managedObjectContext);
+    NSLog(@"PS Coord : %@",self.managedObjectContext.persistentStoreCoordinator);
+    NSLog(@"MOM : %@", self.managedObjectContext.persistentStoreCoordinator.managedObjectModel);
+
+    
     NSManagedObject *sessionInfo = [NSEntityDescription
                                     insertNewObjectForEntityForName:@"Session"
                                     inManagedObjectContext:self.managedObjectContext];

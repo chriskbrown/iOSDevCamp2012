@@ -175,6 +175,9 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Root View Controller" id="atC-zG-9ot"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="label" destination="UF0-5j-DEx" id="DSn-5s-L4h"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="2113" y="667"/>
@@ -213,7 +216,7 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <connections>
-                                    <segue destination="qnv-sn-iZl" kind="push" id="TdE-bl-eO6"/>
+                                    <segue destination="qnv-sn-iZl" kind="push" identifier="showDetailTextView" id="TdE-bl-eO6"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -262,10 +265,15 @@
                 <relationship kind="action" name="authorizeWithTwitter"/>
             </relationships>
         </class>
+        <class className="Session" superclassName="NSManagedObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/Session.h"/>
+        </class>
         <class className="TextDetailViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TextDetailViewController.h"/>
             <relationships>
                 <relationship kind="action" name="authorizeWithTwitter"/>
+                <relationship kind="action" name="setLabelText:" candidateClass="Session"/>
+                <relationship kind="outlet" name="label" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="TextTableViewController" superclassName="UITableViewController">
