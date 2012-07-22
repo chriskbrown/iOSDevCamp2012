@@ -96,18 +96,15 @@
     NSLog(@"Delegate answered.");
     NSString *type = [info objectForKey:UIImagePickerControllerMediaType];
     
+    UIActivityIndicatorView *aiv = [UIActivityIndicatorView new];
+    aiv.autoresizingMask = UIViewAutoresizingFlexibleWidth |
+    UIViewAutoresizingFlexibleHeight;
+    [self.view addSubview:aiv];
+    NSString *sfi;
+    
+    
     if ( [type isEqualToString:@"public.image"] ) {
-        UIActivityIndicatorView *aiv = [UIActivityIndicatorView new];
-        aiv.autoresizingMask = UIViewAutoresizingFlexibleWidth |
-        UIViewAutoresizingFlexibleHeight;
-        
-        [self.view addSubview:aiv];
-        
-        NSString *sfi = [self stringFromImage:[info objectForKey:UIImagePickerControllerOriginalImage]];
-        // TODO: Split up and reassemble image/strings for font purposes and throw it in a thread.
-        
-        [aiv removeFromSuperview];
-        
+        sfi = [self stringFromImage:[info objectForKey:UIImagePickerControllerOriginalImage]];
         NSLog(@"%@", sfi);
         NSLog( @"Image finished.");
     } else if ( [type isEqualToString:@"public.movie"] ) {
@@ -126,7 +123,7 @@
         
         NSLog(@"VIIIIIDYO!");
     }
-
+    [aiv removeFromSuperview];
     
 }
 
