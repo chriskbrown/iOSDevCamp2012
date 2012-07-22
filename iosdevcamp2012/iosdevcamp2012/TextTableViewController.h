@@ -22,6 +22,7 @@
 #import <UIKit/UIKit.h>
 #import "Session.h"
 #import "TextEntry.h"
+#import "TextDetailViewController.h"
 
 @interface TextTableViewController : UITableViewController <UINavigationControllerDelegate, UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate>
 

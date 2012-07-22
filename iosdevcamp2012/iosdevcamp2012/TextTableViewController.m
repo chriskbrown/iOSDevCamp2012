@@ -277,8 +277,14 @@
     
     if ([[segue identifier] isEqualToString:@"showDetailTextView"]) {
         if ([segue.destinationViewController respondsToSelector:@selector(setLabelText:)]) {
-            [segue.destinationViewController performSelector:@selector(setLabelText:) 
-                                                  withObject:sessionData];
+            
+            NSIndexPath *path = [self.tableView indexPathForSelectedRow];
+            Session *session = [self.fetchedResultsController objectAtIndexPath:path];
+            
+            [segue.destinationViewController setTransferStr:session.text];
+             
+             
+            NSLog(@"Set the new text: %@", session.text);
         }     
     
     }

@@ -30,10 +30,14 @@
 
 @property (nonatomic, strong) NSString *token;
 @property (nonatomic, strong) IBOutlet UILabel *label;
+@property (nonatomic, strong) NSString *labelText;
+
+@property (nonatomic, copy) NSString *transferStr;
 
 - (GTMOAuth2Authentication *)singlyAuth;
 - (void)authorize:(NSString *)service;
 - (IBAction)authorizeWithTwitter;
-- (void) setLabelText:(Session *)sessionObject;
+//- (void) setLabelText:(Session *)sessionObject;
+//- (void) setLabelText:(NSString *)text;
 
 @end

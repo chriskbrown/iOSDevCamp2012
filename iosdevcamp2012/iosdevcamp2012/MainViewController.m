@@ -84,41 +84,41 @@
 {
     [super viewDidLoad];
     
-    NSManagedObject *sessionInfo = [NSEntityDescription
-                                    insertNewObjectForEntityForName:@"Session"
-                                    inManagedObjectContext:self.managedObjectContext];
+//    NSManagedObject *sessionInfo = [NSEntityDescription
+//                                    insertNewObjectForEntityForName:@"Session"
+//                                    inManagedObjectContext:self.managedObjectContext];
+//    
+//    NSString *locDescription = [[NSString alloc] initWithString:@"This is a description of a location"];
+//    [sessionInfo setValue:locDescription forKey:@"location"];
+//    
+//    NSString *body = [[NSString alloc] initWithString:@"This is some text"];
+//    [sessionInfo setValue:body forKey:@"text"];
+//   
+//    [sessionInfo setValue:[NSDate date] forKey:@"begintime"];
+//    
+//
+//    
+//    NSError *error;
+//    if (![self.managedObjectContext save:&error]) {
+//        NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+//    }
     
-    NSString *locDescription = [[NSString alloc] initWithString:@"This is a description of a location"];
-    [sessionInfo setValue:locDescription forKey:@"location"];
-    
-    NSString *body = [[NSString alloc] initWithString:@"This is some text"];
-    [sessionInfo setValue:body forKey:@"text"];
-   
-    [sessionInfo setValue:[NSDate date] forKey:@"begintime"];
-    
-
-    
-    NSError *error;
-    if (![self.managedObjectContext save:&error]) {
-        NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
-    }
-    
-    //List all the objects in the db
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *sessionEntity = [NSEntityDescription
-                                          entityForName:@"Session" inManagedObjectContext:self.managedObjectContext];
-    [fetchRequest setEntity:sessionEntity];
-    NSArray *fetchedObjects = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
-    
-    
-    
-    for (NSManagedObject *sessionObject in fetchedObjects) {
-        NSLog(@"Latitude: %@", [sessionObject valueForKey:@"latitude"]);
-        NSLog(@"Longitude: %@", [sessionObject valueForKey:@"longitude"]);
-        NSLog(@"Location: %@", [sessionObject valueForKey:@"location"]);
-        NSLog(@"Timestamp: %@", [sessionObject valueForKey:@"begintime"]);
-        NSLog(@"Text body: %@", [sessionObject valueForKey:@"text"]);
-    } 
+//    //List all the objects in the db
+//    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+//    NSEntityDescription *sessionEntity = [NSEntityDescription
+//                                          entityForName:@"Session" inManagedObjectContext:self.managedObjectContext];
+//    [fetchRequest setEntity:sessionEntity];
+//    NSArray *fetchedObjects = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+//    
+//    
+//    
+//    for (NSManagedObject *sessionObject in fetchedObjects) {
+//        NSLog(@"Latitude: %@", [sessionObject valueForKey:@"latitude"]);
+//        NSLog(@"Longitude: %@", [sessionObject valueForKey:@"longitude"]);
+//        NSLog(@"Location: %@", [sessionObject valueForKey:@"location"]);
+//        NSLog(@"Timestamp: %@", [sessionObject valueForKey:@"begintime"]);
+//        NSLog(@"Text body: %@", [sessionObject valueForKey:@"text"]);
+//    } 
 }
 
 - (void)viewDidUnload

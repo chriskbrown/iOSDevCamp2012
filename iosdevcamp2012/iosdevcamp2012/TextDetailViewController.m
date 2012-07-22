@@ -23,6 +23,8 @@
 @implementation TextDetailViewController
 @synthesize token;
 @synthesize label;
+@synthesize labelText;
+@synthesize transferStr;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -121,10 +123,12 @@
     }
 }
 
-- (void) setLabelText:(Session *)sessionObject
-{
-    self.label.text = sessionObject.text;
-}
+//- (void) setLabelText:(NSString *)text
+//{
+//   // labelText = [[NSString alloc]init];
+//    label.text = text;
+//    
+//}
 
 - (IBAction)authorizeWithTwitter
 {
@@ -147,13 +151,18 @@
 }
 */
 
-/*
+
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSLog(@"Text:  %@", self.labelText);
+    //[label setText:self.labelText];
+    
+    self.label.text = self.transferStr;
+    
 }
-*/
+
 
 - (void)viewDidUnload
 {
