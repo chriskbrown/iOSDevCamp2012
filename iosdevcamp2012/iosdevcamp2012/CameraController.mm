@@ -106,8 +106,17 @@
     NSString *type = [info objectForKey:UIImagePickerControllerMediaType];
     
     if ( [type isEqualToString:@"public.image"] ) {
+        UIActivityIndicatorView *aiv = [UIActivityIndicatorView new];
+        aiv.autoresizingMask = UIViewAutoresizingFlexibleWidth |
+        UIViewAutoresizingFlexibleHeight;
+        
+        [self.view addSubview:aiv];
+        
         NSString *sfi = [self stringFromImage:[info objectForKey:UIImagePickerControllerOriginalImage]];
         // TODO: Split up and reassemble image/strings for font purposes and throw it in a thread.
+        
+        [aiv removeFromSuperview];
+        
         NSLog(@"%@", sfi);
         NSLog( @"Image finished.");
     } else if ( [type isEqualToString:@"public.movie"] ) {
