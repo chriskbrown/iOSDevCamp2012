@@ -99,7 +99,9 @@
     NSString *type = [info objectForKey:UIImagePickerControllerMediaType];
     if ( [type isEqualToString:@"public.image"] ) {
         sfi = [self stringFromImage:[info objectForKey:UIImagePickerControllerOriginalImage]];
-        NSLog(@"%@", sfi);
+        //NSLog(@"%@", sfi);
+        [self saveText:sfi];
+        
         NSLog( @"Image finished.");
     } else if ( [type isEqualToString:@"public.movie"] ) {
         MPMoviePlayerController *mpc = [MPMoviePlayerController new];
@@ -115,22 +117,28 @@
         
         for ( i = 0; i < 2*mpc.duration; i++ ) {
             img = [mpc thumbnailImageAtTime:(i/2) timeOption:MPMovieTimeOptionNearestKeyFrame];
-            NSString *sfi = [self stringFromImage:img];
+            //sfi = [self stringFromImage:img];
+            sfi = [NSString stringWithFormat:@"%@%@",sfi,[self stringFromImage:img] ];
             
-            NSMutableArray *ma = [NSMutableArray new];
-            for ( j = 0; j < sfi.length; j++ ) {
-                if ( [sfi characterAtIndex:j ] == '\n' ) {
-                    [ma addObject:[sfi substringWithRange:NSMakeRange(i, k) ]];
-                    k = j + 1;
-                }
-            }
+            /*NSMutableArray *ma = [NSMutableArray new];
+             for ( j = 0; j < sfi.length; j++ ) {
+             if ( [sfi characterAtIndex:j ] == '\n' ) {
+             [ma addObject:[sfi substringWithRange:NSMakeRange(i, k) ]];
+             k = j + 1;
+             }
+             }
+             
+             for ( j = 0; j < ma.count; j++ ) {
+             NSString *main = (NSString *)[mainma objectAtIndex:j];
+             
+             }
+             */
             
-            
-            NSLog( @"%@", sfi);
+            [self saveText:sfi];
             NSLog( @"Video finished.");
         }
         
-        NSLog(@"VIIIIIDYO!");
+        [self saveText:sfi];
     }
 }
 

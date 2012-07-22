@@ -14,7 +14,7 @@
 
 //- (void) launchCamera:(UIViewController *)controller;
 - (NSString *) stringFromImage:(UIImage *)img;
-
+-(void) saveText:(NSString *)text;
 
 
 @end
