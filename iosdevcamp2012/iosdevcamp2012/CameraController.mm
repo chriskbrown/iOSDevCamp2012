@@ -50,7 +50,7 @@
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     
-    NSString *type = [info objectForKey:UIImagePickerControllerMediaType];
+    //NSString *type = [info objectForKey:UIImagePickerControllerMediaType];
 //    if ( [type isEqualToString:<#(NSString *)#>
     
     [ipc dismissModalViewControllerAnimated:YES];

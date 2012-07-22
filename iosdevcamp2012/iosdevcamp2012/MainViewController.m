@@ -8,6 +8,7 @@
 #import "MainViewController.h"
 #import "CameraController.h"
 
+
 @implementation MainViewController
 
 @synthesize managedObjectContext = _managedObjectContext;
@@ -199,6 +200,9 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    
+    NSLog(@"Segue!!!!!!!");
+    
     if ([[segue identifier] isEqualToString:@"showAlternate"]) {
         [[segue destinationViewController] setDelegate:self];
     }
@@ -206,6 +210,20 @@
 //    if ([[segue identifier] isEqualToString:@"CameraSeque"]) {
 //        [[segue destinationViewController] setDelegate:self];
 //    }
+    NSLog(@"controllerProgram:: prepareForSegue: %@", segue.identifier );
+    
+    if ([[segue identifier] isEqualToString:@"showTextTable"]) {
+        
+        NSLog(@"Segue ident" );
+               
+        //[[segue destinationViewController] setDelegate:self];
+        
+//        UINavigationController *nv = (UINavigationController *)[segue destinationViewController];
+//        [nv setDelegate:self];
+        TextTableViewController *ttvc = (TextTableViewController *)[segue destinationViewController];
+        ttvc.managedObjectContext = self.managedObjectContext;
+        //[ttvc setDelegate:self];
+    }
 }
 
 @end

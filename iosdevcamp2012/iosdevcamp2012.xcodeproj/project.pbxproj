@@ -31,6 +31,10 @@
 		A7B5ABA615BB99AE007878B6 /* GTMOAuth2SignIn.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B5ABA015BB99AE007878B6 /* GTMOAuth2SignIn.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A7B5ABA715BB99AE007878B6 /* GTMOAuth2ViewControllerTouch.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B5ABA215BB99AE007878B6 /* GTMOAuth2ViewControllerTouch.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A7B5ABA815BB99AE007878B6 /* GTMOAuth2ViewTouch.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7B5ABA315BB99AE007878B6 /* GTMOAuth2ViewTouch.xib */; };
+		A7B5ABB315BB9E4B007878B6 /* TutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B5ABB215BB9E4B007878B6 /* TutorialViewController.m */; };
+		A7B5ABB915BB9F5A007878B6 /* TextTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B5ABB815BB9F5A007878B6 /* TextTableViewController.m */; };
+		A7FCCAB715BBD2B800E248D5 /* Session.m in Sources */ = {isa = PBXBuildFile; fileRef = A7FCCAB615BBD2B800E248D5 /* Session.m */; };
+		A7FCCABB15BBD2C700E248D5 /* TextEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = A7FCCABA15BBD2C700E248D5 /* TextEntry.m */; };
 		D8939E6415BB4C360016AF67 /* libtesseract_full.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D8939E6315BB4C360016AF67 /* libtesseract_full.a */; };
 		D8939E6515BB4C360016AF67 /* libtesseract_full.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D8939E6315BB4C360016AF67 /* libtesseract_full.a */; };
 		D8939E9815BB51FB0016AF67 /* CameraController.mm in Sources */ = {isa = PBXBuildFile; fileRef = D8939E9715BB51FB0016AF67 /* CameraController.mm */; };
@@ -99,6 +103,14 @@
 		A7B5ABA115BB99AE007878B6 /* GTMOAuth2ViewControllerTouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMOAuth2ViewControllerTouch.h; sourceTree = "<group>"; };
 		A7B5ABA215BB99AE007878B6 /* GTMOAuth2ViewControllerTouch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMOAuth2ViewControllerTouch.m; sourceTree = "<group>"; };
 		A7B5ABA315BB99AE007878B6 /* GTMOAuth2ViewTouch.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GTMOAuth2ViewTouch.xib; sourceTree = "<group>"; };
+		A7B5ABB115BB9E4B007878B6 /* TutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TutorialViewController.h; sourceTree = "<group>"; };
+		A7B5ABB215BB9E4B007878B6 /* TutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorialViewController.m; sourceTree = "<group>"; };
+		A7B5ABB715BB9F5A007878B6 /* TextTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextTableViewController.h; sourceTree = "<group>"; };
+		A7B5ABB815BB9F5A007878B6 /* TextTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextTableViewController.m; sourceTree = "<group>"; };
+		A7FCCAB515BBD2B800E248D5 /* Session.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Session.h; sourceTree = "<group>"; };
+		A7FCCAB615BBD2B800E248D5 /* Session.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Session.m; sourceTree = "<group>"; };
+		A7FCCAB915BBD2C700E248D5 /* TextEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextEntry.h; sourceTree = "<group>"; };
+		A7FCCABA15BBD2C700E248D5 /* TextEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextEntry.m; sourceTree = "<group>"; };
 		D8939E6315BB4C360016AF67 /* libtesseract_full.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libtesseract_full.a; sourceTree = "<group>"; };
 		D8939E9615BB51FB0016AF67 /* CameraController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraController.h; sourceTree = "<group>"; };
 		D8939E9715BB51FB0016AF67 /* CameraController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CameraController.mm; sourceTree = "<group>"; };
@@ -189,6 +201,10 @@
 				A75B8D9E15BB3143005D9719 /* AppDelegate.h */,
 				A75B8D9F15BB3143005D9719 /* AppDelegate.m */,
 				A75B8DA115BB3143005D9719 /* MainStoryboard.storyboard */,
+				A7B5ABB115BB9E4B007878B6 /* TutorialViewController.h */,
+				A7B5ABB215BB9E4B007878B6 /* TutorialViewController.m */,
+				A7B5ABB715BB9F5A007878B6 /* TextTableViewController.h */,
+				A7B5ABB815BB9F5A007878B6 /* TextTableViewController.m */,
 				A75B8DA715BB3143005D9719 /* MainViewController.h */,
 				A75B8DA815BB3143005D9719 /* MainViewController.m */,
 				D8939E9615BB51FB0016AF67 /* CameraController.h */,
@@ -196,6 +212,10 @@
 				A75B8DAA15BB3143005D9719 /* FlipsideViewController.h */,
 				A75B8DAB15BB3143005D9719 /* FlipsideViewController.m */,
 				A75B8DA415BB3143005D9719 /* iosdevcamp2012.xcdatamodeld */,
+				A7FCCAB915BBD2C700E248D5 /* TextEntry.h */,
+				A7FCCABA15BBD2C700E248D5 /* TextEntry.m */,
+				A7FCCAB515BBD2B800E248D5 /* Session.h */,
+				A7FCCAB615BBD2B800E248D5 /* Session.m */,
 				A75B8D9615BB3143005D9719 /* Supporting Files */,
 			);
 			path = iosdevcamp2012;
@@ -412,6 +432,10 @@
 				A7B5ABA515BB99AE007878B6 /* GTMOAuth2Authentication.m in Sources */,
 				A7B5ABA615BB99AE007878B6 /* GTMOAuth2SignIn.m in Sources */,
 				A7B5ABA715BB99AE007878B6 /* GTMOAuth2ViewControllerTouch.m in Sources */,
+				A7B5ABB315BB9E4B007878B6 /* TutorialViewController.m in Sources */,
+				A7B5ABB915BB9F5A007878B6 /* TextTableViewController.m in Sources */,
+				A7FCCAB715BBD2B800E248D5 /* Session.m in Sources */,
+				A7FCCABB15BBD2C700E248D5 /* TextEntry.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
