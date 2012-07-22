@@ -72,8 +72,7 @@
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
 	
     // create a context with RGBA pixels
-    CGContextRef context = CGBitmapContextCreate(pixels, width, height, 8, width * sizeof(uint32_t), colorSpace, 
-                                                 kCGBitmapByteOrder32Little | kCGImageAlphaPremultipliedLast);
+    CGContextRef context = CGBitmapContextCreate(pixels, width, height, 8, width * sizeof(uint32_t), colorSpace, kCGBitmapByteOrder32Little | kCGImageAlphaPremultipliedLast);
 	
     // paint the bitmap to our context which will fill in the pixels array
     CGContextDrawImage(context, CGRectMake(0, 0, width, height), [img CGImage]);
@@ -90,19 +89,14 @@
     
    }
 
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
-    // TODO: Buffer text. uffer text. ffer text. <-- So this doesn't happen.
-    // TODO: Check for carriage returns and parse accordingly. :-D
-    NSLog(@"Delegate answered.");
-    NSString *type = [info objectForKey:UIImagePickerControllerMediaType];
+- (void) mergeStringArrays:(NSMutableArray *)main: (NSMutableArray *)appendage {
     
-    UIActivityIndicatorView *aiv = [UIActivityIndicatorView new];
-    aiv.autoresizingMask = UIViewAutoresizingFlexibleWidth |
-    UIViewAutoresizingFlexibleHeight;
-    [self.view addSubview:aiv];
+}
+
+- (void)processGraphicalData:(NSDictionary *)info {
     NSString *sfi;
     
-    
+    NSString *type = [info objectForKey:UIImagePickerControllerMediaType];
     if ( [type isEqualToString:@"public.image"] ) {
         sfi = [self stringFromImage:[info objectForKey:UIImagePickerControllerOriginalImage]];
         NSLog(@"%@", sfi);
@@ -111,11 +105,26 @@
         MPMoviePlayerController *mpc = [MPMoviePlayerController new];
         [mpc setContentURL:[info objectForKey:UIImagePickerControllerMediaURL] ];
         
+        NSMutableArray *mainma = [NSMutableArray new];
+        
         UIImage *img;
-        int i;
+        int i, j, k;
+        j = 0;
+        k = 0;
+        
+        
         for ( i = 0; i < 2*mpc.duration; i++ ) {
             img = [mpc thumbnailImageAtTime:(i/2) timeOption:MPMovieTimeOptionNearestKeyFrame];
             NSString *sfi = [self stringFromImage:img];
+            
+            NSMutableArray *ma = [NSMutableArray new];
+            for ( j = 0; j < sfi.length; j++ ) {
+                if ( [sfi characterAtIndex:j ] == '\n' ) {
+                    [ma addObject:[sfi substringWithRange:NSMakeRange(i, k) ]];
+                    k = j + 1;
+                }
+            }
+            
             
             NSLog( @"%@", sfi);
             NSLog( @"Video finished.");
@@ -123,7 +132,17 @@
         
         NSLog(@"VIIIIIDYO!");
     }
-    [aiv removeFromSuperview];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    // TODO: Buffer text. uffer text. ffer text. <-- So this doesn't happen.
+    // TODO: Check for carriage returns and parse accordingly. :-D
+
+    
+    [NSThread detachNewThreadSelector:@selector(processGraphicalData:) toTarget:self withObject:info];
+
+    
+    [self dismissModalViewControllerAnimated:YES];  
     
 }
 
