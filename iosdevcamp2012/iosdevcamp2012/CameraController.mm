@@ -11,22 +11,52 @@
 #import "CameraController.h"
 #import "baseapi.h"
 
+
+#import <stdlib.h>
+
 @implementation CameraController
 
-@synthesize dataPath;
 
 - (id) init {
     self = [super init];
     if ( self != nil ) { 
         self.delegate = self;
+    
     }
     return self;
 }
 
+- (tesseract::TessBaseAPI *) initTess {
+    NSArray *documentPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);                                                     
+    NSString *documentPath = ([documentPaths count] > 0) ? [documentPaths objectAtIndex:0] : nil;                                                                 
+    
+    NSString *dataPath = [documentPath stringByAppendingPathComponent:@"tessdata"];                                                                               
+    NSFileManager *fileManager = [NSFileManager defaultManager];                                                                                                  
+    // If the expected store doesn't exist, copy the default store.
+    if (![fileManager fileExistsAtPath:dataPath]) {
+        // get the path to the app bundle (with the tessdata dir)
+        NSString *bundlePath = [[NSBundle mainBundle] bundlePath];                                                                                                
+        NSString *tessdataPath = [bundlePath stringByAppendingPathComponent:@"tessdata"];                                                                         
+        if (tessdataPath) {
+            [fileManager copyItemAtPath:tessdataPath toPath:dataPath error:NULL];                                                                                 
+        }
+    }
+    
+    
+    setenv("TESSDATA_PREFIX", [[documentPath stringByAppendingString:@"/"] UTF8String], 1);
+    
+    
+    
+    tesseract::TessBaseAPI* tess = new tesseract::TessBaseAPI();
+    tess->Init([ dataPath cStringUsingEncoding:NSUTF8StringEncoding], "eng" );
+    
+    printf("%s \n", getenv("TESSDATA_PREFIX") );
+    return tess;
+}
+
 - (NSString *) stringFromImage:(UIImage *)img {
     // This was jeeped from a certain Mr. Nolan Brown.
-    TessBaseAPI *tess = new TessBaseAPI();
-    tess->SimpleInit([ dataPath cStringUsingEncoding:NSUTF8StringEncoding], "eng", false );
+    tesseract::TessBaseAPI *tess = [self initTess];
     
     CGSize imageSize = [img size];
     double bytes_per_line	= CGImageGetBytesPerRow([img CGImage]);

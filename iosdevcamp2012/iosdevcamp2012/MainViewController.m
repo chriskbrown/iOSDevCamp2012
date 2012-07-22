@@ -44,8 +44,7 @@
         ipc = [CameraController new];
         [ipc setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
         //[ipc setDelegate:ipc];
-        AppDelegate *ad =  (AppDelegate *)[UIApplication sharedApplication].delegate;
-        [ipc setDataPath:[ad.applicationDocumentsDirectory absoluteString] ];
+
         [self presentModalViewController:ipc animated:YES];
 
     } 

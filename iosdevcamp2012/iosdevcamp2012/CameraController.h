@@ -9,8 +9,6 @@
 
 @interface CameraController : UIImagePickerController  <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
-@property (nonatomic) NSString* dataPath;
-
 - (void) launchCamera:(UIViewController *)controller;
 - (NSString *) stringFromImage:(UIImage *)img;
 
