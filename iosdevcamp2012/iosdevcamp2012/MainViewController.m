@@ -12,8 +12,7 @@
 
 @implementation MainViewController
 
-static NSString *const kMyClientID = @"3a994803e36ab46763714a79719ca26b";
-static NSString *const kMyClientSecret = @"3a994803e36ab46763714a79719ca26b";
+
 
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize ipc;
@@ -38,7 +37,7 @@ static NSString *const kMyClientSecret = @"3a994803e36ab46763714a79719ca26b";
         
         ipc = [CameraController new];
         [ipc setSourceType:UIImagePickerControllerCameraCaptureModeVideo];
-        //[ipc setDelegate:ipc];
+        [ipc setDelegate:ipc];
         [self presentModalViewController:ipc animated:YES];
         
     } 
@@ -46,7 +45,7 @@ static NSString *const kMyClientSecret = @"3a994803e36ab46763714a79719ca26b";
     {
         ipc = [CameraController new];
         [ipc setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
-        //[ipc setDelegate:ipc];
+        [ipc setDelegate:ipc];
 
         [self presentModalViewController:ipc animated:YES];
 

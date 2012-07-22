@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A736514C15BC0235001D6890 /* twitter-bird-white-on-blue.png in Resources */ = {isa = PBXBuildFile; fileRef = A736514B15BC0235001D6890 /* twitter-bird-white-on-blue.png */; };
+		A736515115BC048E001D6890 /* TextDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A736515015BC048E001D6890 /* TextDetailViewController.m */; };
 		A75B8D8E15BB3143005D9719 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A75B8D8D15BB3143005D9719 /* UIKit.framework */; };
 		A75B8D9015BB3143005D9719 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A75B8D8F15BB3143005D9719 /* Foundation.framework */; };
 		A75B8D9215BB3143005D9719 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A75B8D9115BB3143005D9719 /* CoreGraphics.framework */; };
@@ -58,6 +60,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A736514B15BC0235001D6890 /* twitter-bird-white-on-blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "twitter-bird-white-on-blue.png"; sourceTree = "<group>"; };
+		A736514F15BC048E001D6890 /* TextDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextDetailViewController.h; sourceTree = "<group>"; };
+		A736515015BC048E001D6890 /* TextDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextDetailViewController.m; sourceTree = "<group>"; };
 		A75B8D8915BB3143005D9719 /* iosdevcamp2012.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosdevcamp2012.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A75B8D8D15BB3143005D9719 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A75B8D8F15BB3143005D9719 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -184,6 +189,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A736514E15BC023D001D6890 /* assets */ = {
+			isa = PBXGroup;
+			children = (
+				A736514B15BC0235001D6890 /* twitter-bird-white-on-blue.png */,
+			);
+			name = assets;
+			sourceTree = "<group>";
+		};
 		A75B8D7E15BB3142005D9719 = {
 			isa = PBXGroup;
 			children = (
@@ -232,6 +245,8 @@
 				A7B5ABB215BB9E4B007878B6 /* TutorialViewController.m */,
 				A7B5ABB715BB9F5A007878B6 /* TextTableViewController.h */,
 				A7B5ABB815BB9F5A007878B6 /* TextTableViewController.m */,
+				A736514F15BC048E001D6890 /* TextDetailViewController.h */,
+				A736515015BC048E001D6890 /* TextDetailViewController.m */,
 				A75B8DA715BB3143005D9719 /* MainViewController.h */,
 				A75B8DA815BB3143005D9719 /* MainViewController.m */,
 				D8939E9615BB51FB0016AF67 /* CameraController.h */,
@@ -251,6 +266,7 @@
 		A75B8D9615BB3143005D9719 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A736514E15BC023D001D6890 /* assets */,
 				A75B8D9715BB3143005D9719 /* iosdevcamp2012-Info.plist */,
 				A75B8D9815BB3143005D9719 /* InfoPlist.strings */,
 				A75B8D9B15BB3143005D9719 /* main.m */,
@@ -459,6 +475,8 @@
 				A75B8DA315BB3143005D9719 /* MainStoryboard.storyboard in Resources */,
 				A7B5ABA815BB99AE007878B6 /* GTMOAuth2ViewTouch.xib in Resources */,
 				D88F912715BC01F6008936F2 /* tessdata in Resources */,
+				D88F911B15BBE4E0008936F2 /* eng.traineddata in Resources */,
+				A736514C15BC0235001D6890 /* twitter-bird-white-on-blue.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -508,6 +526,7 @@
 				A7B5ABB915BB9F5A007878B6 /* TextTableViewController.m in Sources */,
 				A7FCCAB715BBD2B800E248D5 /* Session.m in Sources */,
 				A7FCCABB15BBD2C700E248D5 /* TextEntry.m in Sources */,
+				A736515115BC048E001D6890 /* TextDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

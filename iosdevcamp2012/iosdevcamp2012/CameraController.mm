@@ -56,8 +56,15 @@
     tesseract::TessBaseAPI *tess = [self initTess];
    
     
+    //****** CRASH HERE. SIGABRT
     
-    free(pixels);
+    /*
+     Error opening data file /var/mobile/Applications/48F6D76E-EDA8-4C15-AAFC-3DEEEB3251BC/Documents/../iosdevcamp2012.app/tessdata/../eng.traineddata
+     iosdevcamp2012(2625,0x3ed6ad98) malloc: *** error for object 0x32b17717: pointer being freed was not allocated
+     *** set a breakpoint in malloc_error_break to debug
+     
+     */
+    
     
     CGSize size = [img size];
     int width = size.width;
@@ -87,7 +94,7 @@
     tess->SetImage((const unsigned char *) pixels, width, height, sizeof(uint32_t), width * sizeof(uint32_t));
     tess->Recognize(NULL);
     char* utf8Text = tess->GetUTF8Text();
-    
+    free(pixels);
     return [NSString stringWithCString:utf8Text encoding:NSUTF8StringEncoding];
     
    }
@@ -124,7 +131,7 @@
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
-    
+    [self dismissModalViewControllerAnimated:YES];
 }
 
 

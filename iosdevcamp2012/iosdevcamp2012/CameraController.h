@@ -9,7 +9,7 @@
 
 @interface CameraController : UIImagePickerController  <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
-- (void) launchCamera:(UIViewController *)controller;
+//- (void) launchCamera:(UIViewController *)controller;
 - (NSString *) stringFromImage:(UIImage *)img;
 
 

@@ -41,8 +41,8 @@
     
     // Release any cached data, images, etc that aren't in use.
     self.searchWasActive = [self.searchDisplayController isActive];
-    self.savedSearchTerm = [self.searchDisplayController.searchBar text];
-    self.savedScopeButtonIndex = [self.searchDisplayController.searchBar selectedScopeButtonIndex];
+//    self.savedSearchTerm = [self.searchDisplayController.searchBar text];
+//    self.savedScopeButtonIndex = [self.searchDisplayController.searchBar selectedScopeButtonIndex];
 }
 
 #pragma mark - View lifecycle
@@ -50,6 +50,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
     
     NSLog(@"view did load");
     
@@ -114,10 +115,10 @@
 
 #pragma mark - Table view data source
 
--(void)searchString:(NSString*)s {
-    self.savedSearchTerm = s;
-    [self.tableView reloadData];
-}
+//-(void)searchString:(NSString*)s {
+//    self.savedSearchTerm = s;
+//    [self.tableView reloadData];
+//}
 
 -(NSFetchedResultsController *)fetchedResultsController {
     

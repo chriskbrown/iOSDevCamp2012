@@ -6,6 +6,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#define kMyClientID @"3a994803e36ab46763714a79719ca26b"
+#define kMyClientSecret @"3a994803e36ab46763714a79719ca26b"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

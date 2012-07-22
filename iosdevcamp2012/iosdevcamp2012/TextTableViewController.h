@@ -29,8 +29,8 @@
 @property (nonatomic, retain, readonly) NSFetchedResultsController *fetchedResultsController;
 @property (nonatomic, retain, readonly) NSFetchedResultsController *searchFetchedResultsController;
 
-@property (nonatomic, copy) NSString *savedSearchTerm;
-@property (nonatomic) NSInteger savedScopeButtonIndex;
+//@property (nonatomic, copy) NSString *savedSearchTerm;
+//@property (nonatomic) NSInteger savedScopeButtonIndex;
 @property (nonatomic) BOOL searchWasActive;
 
 @end
