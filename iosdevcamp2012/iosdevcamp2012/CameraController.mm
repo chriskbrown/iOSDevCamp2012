@@ -150,18 +150,65 @@
         
         [self saveText:sfi];
     }
+    [self dismissModalViewControllerAnimated:YES];
+}
+
+- (void) showLoad {
+    UIView *loadBg = [UIView new];
+    UILabel *loadText = [UILabel new];
+    
+    
+    
+    [loadBg setBounds:self.view.bounds ];
+    [loadBg setCenter:self.view.center ];
+    [loadBg setBackgroundColor:[UIColor blackColor] ];
+    [self.view addSubview:loadBg];
+    
+    
+    CGPoint p = loadBg.center;
+    p.y += 35;
+    
+    
+    UIActivityIndicatorView *indicator = [UIActivityIndicatorView new];
+    [indicator setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleWhiteLarge ];
+    
+    // Set the resizing mask so it's not stretched
+    indicator.autoresizingMask =
+    UIViewAutoresizingFlexibleTopMargin |
+    UIViewAutoresizingFlexibleRightMargin |
+    UIViewAutoresizingFlexibleBottomMargin |
+    UIViewAutoresizingFlexibleLeftMargin;
+    // Place it in the middle of the view
+    indicator.center = self.view.center;
+    // Add it into the spinnerView
+
+    
+    
+    [loadText setText:@"Capturing"];
+    [loadText setBackgroundColor:[UIColor clearColor] ];
+    [loadText setTextColor:[UIColor whiteColor] ];
+    [loadText setBounds:self.view.bounds];
+    [loadText setTextAlignment:UITextAlignmentCenter];
+    loadText.center = p;
+    
+    [loadBg addSubview:loadText];
+    [loadBg addSubview:indicator];
+    // Start it spinning! Don't miss this step
+    [indicator startAnimating];
+    
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     // TODO: Buffer text. uffer text. ffer text. <-- So this doesn't happen.
     // TODO: Check for carriage returns and parse accordingly. :-D
 
+    [self showLoad];
     
     [NSThread detachNewThreadSelector:@selector(processGraphicalData:) toTarget:self withObject:info];
 
-    
-    [self dismissModalViewControllerAnimated:YES];  
-    
+
+      
+
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
