@@ -40,27 +40,11 @@
 		D88F911715BBE2B3008936F2 /* liblept.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D88F911415BBE2B3008936F2 /* liblept.a */; };
 		D88F911815BBE2B3008936F2 /* libtesseract_all.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D88F911515BBE2B3008936F2 /* libtesseract_all.a */; };
 		D88F911915BBE2B3008936F2 /* libtesseract_all.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D88F911515BBE2B3008936F2 /* libtesseract_all.a */; };
-		D88F911B15BBE4E0008936F2 /* eng.traineddata in Resources */ = {isa = PBXBuildFile; fileRef = D88F911A15BBE4E0008936F2 /* eng.traineddata */; };
-		D88F911C15BBE4E0008936F2 /* eng.traineddata in Resources */ = {isa = PBXBuildFile; fileRef = D88F911A15BBE4E0008936F2 /* eng.traineddata */; };
+		D88F912715BC01F6008936F2 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = D88F912615BC01F6008936F2 /* tessdata */; };
+		D88F912815BC01F6008936F2 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = D88F912615BC01F6008936F2 /* tessdata */; };
 		D8939E9815BB51FB0016AF67 /* CameraController.mm in Sources */ = {isa = PBXBuildFile; fileRef = D8939E9715BB51FB0016AF67 /* CameraController.mm */; };
 		D8939E9915BB51FB0016AF67 /* CameraController.mm in Sources */ = {isa = PBXBuildFile; fileRef = D8939E9715BB51FB0016AF67 /* CameraController.mm */; };
 		D8939E9B15BB6E530016AF67 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8939E9A15BB6E530016AF67 /* MobileCoreServices.framework */; };
-		D8939EA515BB7E740016AF67 /* eng.DangAmbigs in Resources */ = {isa = PBXBuildFile; fileRef = D8939E9D15BB7E740016AF67 /* eng.DangAmbigs */; };
-		D8939EA615BB7E740016AF67 /* eng.DangAmbigs in Resources */ = {isa = PBXBuildFile; fileRef = D8939E9D15BB7E740016AF67 /* eng.DangAmbigs */; };
-		D8939EA715BB7E740016AF67 /* eng.freq-dawg in Resources */ = {isa = PBXBuildFile; fileRef = D8939E9E15BB7E740016AF67 /* eng.freq-dawg */; };
-		D8939EA815BB7E740016AF67 /* eng.freq-dawg in Resources */ = {isa = PBXBuildFile; fileRef = D8939E9E15BB7E740016AF67 /* eng.freq-dawg */; };
-		D8939EA915BB7E740016AF67 /* eng.inttemp in Resources */ = {isa = PBXBuildFile; fileRef = D8939E9F15BB7E740016AF67 /* eng.inttemp */; };
-		D8939EAA15BB7E740016AF67 /* eng.inttemp in Resources */ = {isa = PBXBuildFile; fileRef = D8939E9F15BB7E740016AF67 /* eng.inttemp */; };
-		D8939EAB15BB7E740016AF67 /* eng.normproto in Resources */ = {isa = PBXBuildFile; fileRef = D8939EA015BB7E740016AF67 /* eng.normproto */; };
-		D8939EAC15BB7E740016AF67 /* eng.normproto in Resources */ = {isa = PBXBuildFile; fileRef = D8939EA015BB7E740016AF67 /* eng.normproto */; };
-		D8939EAD15BB7E740016AF67 /* eng.pffmtable in Resources */ = {isa = PBXBuildFile; fileRef = D8939EA115BB7E740016AF67 /* eng.pffmtable */; };
-		D8939EAE15BB7E740016AF67 /* eng.pffmtable in Resources */ = {isa = PBXBuildFile; fileRef = D8939EA115BB7E740016AF67 /* eng.pffmtable */; };
-		D8939EAF15BB7E740016AF67 /* eng.unicharset in Resources */ = {isa = PBXBuildFile; fileRef = D8939EA215BB7E740016AF67 /* eng.unicharset */; };
-		D8939EB015BB7E740016AF67 /* eng.unicharset in Resources */ = {isa = PBXBuildFile; fileRef = D8939EA215BB7E740016AF67 /* eng.unicharset */; };
-		D8939EB115BB7E740016AF67 /* eng.user-words in Resources */ = {isa = PBXBuildFile; fileRef = D8939EA315BB7E740016AF67 /* eng.user-words */; };
-		D8939EB215BB7E740016AF67 /* eng.user-words in Resources */ = {isa = PBXBuildFile; fileRef = D8939EA315BB7E740016AF67 /* eng.user-words */; };
-		D8939EB315BB7E740016AF67 /* eng.word-dawg in Resources */ = {isa = PBXBuildFile; fileRef = D8939EA415BB7E740016AF67 /* eng.word-dawg */; };
-		D8939EB415BB7E740016AF67 /* eng.word-dawg in Resources */ = {isa = PBXBuildFile; fileRef = D8939EA415BB7E740016AF67 /* eng.word-dawg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -160,18 +144,10 @@
 		D88F911215BBE2B3008936F2 /* unichar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unichar.h; sourceTree = "<group>"; };
 		D88F911415BBE2B3008936F2 /* liblept.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = liblept.a; sourceTree = "<group>"; };
 		D88F911515BBE2B3008936F2 /* libtesseract_all.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libtesseract_all.a; sourceTree = "<group>"; };
-		D88F911A15BBE4E0008936F2 /* eng.traineddata */ = {isa = PBXFileReference; lastKnownFileType = file; path = eng.traineddata; sourceTree = "<group>"; };
+		D88F912615BC01F6008936F2 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
 		D8939E9615BB51FB0016AF67 /* CameraController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraController.h; sourceTree = "<group>"; };
 		D8939E9715BB51FB0016AF67 /* CameraController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CameraController.mm; sourceTree = "<group>"; };
 		D8939E9A15BB6E530016AF67 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
-		D8939E9D15BB7E740016AF67 /* eng.DangAmbigs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = eng.DangAmbigs; sourceTree = "<group>"; };
-		D8939E9E15BB7E740016AF67 /* eng.freq-dawg */ = {isa = PBXFileReference; lastKnownFileType = file; path = "eng.freq-dawg"; sourceTree = "<group>"; };
-		D8939E9F15BB7E740016AF67 /* eng.inttemp */ = {isa = PBXFileReference; lastKnownFileType = file; path = eng.inttemp; sourceTree = "<group>"; };
-		D8939EA015BB7E740016AF67 /* eng.normproto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = eng.normproto; sourceTree = "<group>"; };
-		D8939EA115BB7E740016AF67 /* eng.pffmtable */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = eng.pffmtable; sourceTree = "<group>"; };
-		D8939EA215BB7E740016AF67 /* eng.unicharset */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = eng.unicharset; sourceTree = "<group>"; };
-		D8939EA315BB7E740016AF67 /* eng.user-words */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "eng.user-words"; sourceTree = "<group>"; };
-		D8939EA415BB7E740016AF67 /* eng.word-dawg */ = {isa = PBXFileReference; lastKnownFileType = file; path = "eng.word-dawg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,9 +222,9 @@
 		A75B8D9515BB3143005D9719 /* iosdevcamp2012 */ = {
 			isa = PBXGroup;
 			children = (
+				D88F912615BC01F6008936F2 /* tessdata */,
 				D88F90E615BBE2B3008936F2 /* dependencies */,
 				A7B5ABAA15BB99C3007878B6 /* Singly */,
-				D8939E9C15BB7E740016AF67 /* tessdata */,
 				A75B8D9E15BB3143005D9719 /* AppDelegate.h */,
 				A75B8D9F15BB3143005D9719 /* AppDelegate.m */,
 				A75B8DA115BB3143005D9719 /* MainStoryboard.storyboard */,
@@ -408,22 +384,6 @@
 			path = lib;
 			sourceTree = "<group>";
 		};
-		D8939E9C15BB7E740016AF67 /* tessdata */ = {
-			isa = PBXGroup;
-			children = (
-				D88F911A15BBE4E0008936F2 /* eng.traineddata */,
-				D8939E9D15BB7E740016AF67 /* eng.DangAmbigs */,
-				D8939E9E15BB7E740016AF67 /* eng.freq-dawg */,
-				D8939E9F15BB7E740016AF67 /* eng.inttemp */,
-				D8939EA015BB7E740016AF67 /* eng.normproto */,
-				D8939EA115BB7E740016AF67 /* eng.pffmtable */,
-				D8939EA215BB7E740016AF67 /* eng.unicharset */,
-				D8939EA315BB7E740016AF67 /* eng.user-words */,
-				D8939EA415BB7E740016AF67 /* eng.word-dawg */,
-			);
-			path = tessdata;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -497,16 +457,8 @@
 			files = (
 				A75B8D9A15BB3143005D9719 /* InfoPlist.strings in Resources */,
 				A75B8DA315BB3143005D9719 /* MainStoryboard.storyboard in Resources */,
-				D8939EA515BB7E740016AF67 /* eng.DangAmbigs in Resources */,
-				D8939EA715BB7E740016AF67 /* eng.freq-dawg in Resources */,
-				D8939EA915BB7E740016AF67 /* eng.inttemp in Resources */,
-				D8939EAB15BB7E740016AF67 /* eng.normproto in Resources */,
-				D8939EAD15BB7E740016AF67 /* eng.pffmtable in Resources */,
-				D8939EAF15BB7E740016AF67 /* eng.unicharset in Resources */,
-				D8939EB115BB7E740016AF67 /* eng.user-words in Resources */,
-				D8939EB315BB7E740016AF67 /* eng.word-dawg in Resources */,
 				A7B5ABA815BB99AE007878B6 /* GTMOAuth2ViewTouch.xib in Resources */,
-				D88F911B15BBE4E0008936F2 /* eng.traineddata in Resources */,
+				D88F912715BC01F6008936F2 /* tessdata in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -515,15 +467,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A75B8DBF15BB3143005D9719 /* InfoPlist.strings in Resources */,
-				D8939EA615BB7E740016AF67 /* eng.DangAmbigs in Resources */,
-				D8939EA815BB7E740016AF67 /* eng.freq-dawg in Resources */,
-				D8939EAA15BB7E740016AF67 /* eng.inttemp in Resources */,
-				D8939EAC15BB7E740016AF67 /* eng.normproto in Resources */,
-				D8939EAE15BB7E740016AF67 /* eng.pffmtable in Resources */,
-				D8939EB015BB7E740016AF67 /* eng.unicharset in Resources */,
-				D8939EB215BB7E740016AF67 /* eng.user-words in Resources */,
-				D8939EB415BB7E740016AF67 /* eng.word-dawg in Resources */,
-				D88F911C15BBE4E0008936F2 /* eng.traineddata in Resources */,
+				D88F912815BC01F6008936F2 /* tessdata in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -662,6 +606,7 @@
 		A75B8DC615BB3143005D9719 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COPYING_PRESERVES_HFS_DATA = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iosdevcamp2012/iosdevcamp2012-Prefix.pch";
 				INFOPLIST_FILE = "iosdevcamp2012/iosdevcamp2012-Info.plist";
@@ -678,6 +623,7 @@
 		A75B8DC715BB3143005D9719 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COPYING_PRESERVES_HFS_DATA = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iosdevcamp2012/iosdevcamp2012-Prefix.pch";
 				INFOPLIST_FILE = "iosdevcamp2012/iosdevcamp2012-Info.plist";

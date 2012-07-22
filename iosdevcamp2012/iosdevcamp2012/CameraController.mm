@@ -45,30 +45,52 @@
     setenv("TESSDATA_PREFIX", [[dataPath stringByAppendingString:@"/"] UTF8String], 1);
     
     tesseract::TessBaseAPI* tess = new tesseract::TessBaseAPI();
-    tess->Init([ dataPath cStringUsingEncoding:NSUTF8StringEncoding], "eng" );
+    tess->Init([ dataPath cStringUsingEncoding:NSUTF8StringEncoding], "../eng" );
     
     return tess;
 }
 
 - (NSString *) stringFromImage:(UIImage *)img {
     // This was jeeped from a certain Mr. Nolan Brown.
+    uint32_t *pixels;
     tesseract::TessBaseAPI *tess = [self initTess];
+   
     
-    CGSize imageSize = [img size];
-    double bytes_per_line	= CGImageGetBytesPerRow([img CGImage]);
-    double bytes_per_pixel	= CGImageGetBitsPerPixel([img CGImage]) / 8.0;
     
-    CFDataRef data = CGDataProviderCopyData(CGImageGetDataProvider([img CGImage]));
-    const UInt8 *imageData = CFDataGetBytePtr(data);
+    free(pixels);
     
-    // this could take a while. maybe needs to happen asynchronously.
-    char* text = tess->TesseractRect(imageData,(int)bytes_per_pixel,(int)bytes_per_line, 0, 0,(int) imageSize.height,(int) imageSize.width);
+    CGSize size = [img size];
+    int width = size.width;
+    int height = size.height;
+	
+	if (width <= 0 || height <= 0)
+		return nil;
+	
+    // the pixels will be painted to this array
+    pixels = (uint32_t *) malloc(width * height * sizeof(uint32_t));
+    // clear the pixels so any transparency is preserved
+    memset(pixels, 0, width * height * sizeof(uint32_t));
+	
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+	
+    // create a context with RGBA pixels
+    CGContextRef context = CGBitmapContextCreate(pixels, width, height, 8, width * sizeof(uint32_t), colorSpace, 
+                                                 kCGBitmapByteOrder32Little | kCGImageAlphaPremultipliedLast);
+	
+    // paint the bitmap to our context which will fill in the pixels array
+    CGContextDrawImage(context, CGRectMake(0, 0, width, height), [img CGImage]);
+	
+	// we're done with the context and color space
+    CGContextRelease(context);
+    CGColorSpaceRelease(colorSpace);
     
-    // Do something useful with the text!
-    NSLog(@"Converted text: %@",[NSString stringWithCString:text encoding:NSUTF8StringEncoding]);
+    tess->SetImage((const unsigned char *) pixels, width, height, sizeof(uint32_t), width * sizeof(uint32_t));
+    tess->Recognize(NULL);
+    char* utf8Text = tess->GetUTF8Text();
     
-    return [NSString stringWithCString:text encoding:NSUTF8StringEncoding];
-}
+    return [NSString stringWithCString:utf8Text encoding:NSUTF8StringEncoding];
+    
+   }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     // TODO: Buffer text. uffer text. ffer text. <-- So this doesn't happen.
