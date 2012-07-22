@@ -11,6 +11,7 @@
 @implementation MainViewController
 
 @synthesize managedObjectContext = _managedObjectContext;
+@synthesize ipc;
 
 - (void)didReceiveMemoryWarning
 {
@@ -20,9 +21,60 @@
 
 #pragma mark - Event handling
 
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    
+    if (buttonIndex == 0) 
+    {
+        if ([UIImagePickerController isSourceTypeAvailable:
+             UIImagePickerControllerSourceTypeCamera] == NO) {
+            NSLog( @"No camera!" );
+            return;
+        }
+        
+        ipc = [UIImagePickerController new];
+        [ipc setSourceType:UIImagePickerControllerCameraCaptureModeVideo];
+        [ipc setDelegate:self];
+        [self presentModalViewController:ipc animated:YES];
+        
+    } 
+    else if (buttonIndex == 1) 
+    {
+        ipc = [UIImagePickerController new];
+        [ipc setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+        [ipc setDelegate:self];
+        [self presentModalViewController:ipc animated:YES];
+
+    } 
+}  
+
+
+
+
 - (IBAction)capturePressed:(id) sender {
-    CameraController *cc = [CameraController new];
-    [cc launchCamera:self];
+//    CameraController *cc = [CameraController new];
+//    [cc launchCamera:self];
+    
+    
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Choose an image source" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Camera", @"Photo Library",nil];
+    
+    [actionSheet setActionSheetStyle:UIActionSheetStyleBlackTranslucent];
+
+    //[actionSheet showInView:self.parentViewController.view];
+    
+    [actionSheet showInView:self.view];
+    
+    
+//        if ([UIImagePickerController isSourceTypeAvailable:
+//             UIImagePickerControllerSourceTypeCamera] == NO) {
+//            NSLog( @"No camera!" );
+//            return;
+//        }
+//        
+//        ipc = [UIImagePickerController new];
+//        [ipc setSourceType:UIImagePickerControllerCameraCaptureModeVideo];
+//        [ipc setDelegate:self];
+//        [self presentModalViewController:ipc animated:YES];
+
 }
 
 #pragma mark - View lifecycle
@@ -150,6 +202,10 @@
     if ([[segue identifier] isEqualToString:@"showAlternate"]) {
         [[segue destinationViewController] setDelegate:self];
     }
+    
+//    if ([[segue identifier] isEqualToString:@"CameraSeque"]) {
+//        [[segue destinationViewController] setDelegate:self];
+//    }
 }
 
 @end

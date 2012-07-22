@@ -8,8 +8,10 @@
 #import "FlipsideViewController.h"
 #import <CoreData/CoreData.h>
 
-@interface MainViewController : UIViewController <FlipsideViewControllerDelegate>
+@interface MainViewController : UIViewController <FlipsideViewControllerDelegate,UIImagePickerControllerDelegate>
 
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, strong) UIImagePickerController *ipc;
+
 
 @end

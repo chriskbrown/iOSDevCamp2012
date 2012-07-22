@@ -12,6 +12,7 @@
 - (void) launchCamera:(UIViewController *)controller;
 - (NSString *) stringFromImage:(UIImage *)img;
 - (NSString *) applicationDocumentsDirectory;
-@property (nonatomic, readonly) UIImagePickerController* ipc;
+
+@property (nonatomic, strong) UIImagePickerController *ipc;
 
 @end
