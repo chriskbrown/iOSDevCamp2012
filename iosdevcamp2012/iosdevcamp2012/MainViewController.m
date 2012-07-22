@@ -87,42 +87,24 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-    
-    
-    
     
     NSManagedObject *sessionInfo = [NSEntityDescription
                                     insertNewObjectForEntityForName:@"Session"
                                     inManagedObjectContext:self.managedObjectContext];
-    //[sessionInfo setValue:NSNumber forKey:@"latitude"];
 
-    NSManagedObject *textEntryInfo = [NSEntityDescription
-                                          insertNewObjectForEntityForName:@"TextEntry"
-                                          inManagedObjectContext:self.managedObjectContext];
+//    NSManagedObject *textEntryInfo = [NSEntityDescription
+//                                          insertNewObjectForEntityForName:@"TextEntry"
+//                                          inManagedObjectContext:self.managedObjectContext];
     
-    
-    //if ([locObj valueForKey:@"longitude"] != NULL) {
-       // NSNumber *longitude = [NSNumber numberWithDouble:lon];
-   // NSNumber *longitude = [NSNumber numberWithString:@"-117.0987"];
     NSString *locDescription = [[NSString alloc] initWithString:@"This is a description of a location"];
     [sessionInfo setValue:locDescription forKey:@"location"];
     
-    NSString *body = [[NSString alloc] initWithString:@"This is some sample text"];
-    [textEntryInfo setValue:body forKey:@"body"];
-    
-    //NSDate *date = ;
-    //NSTimeInterval nowTimeIntervalSince1970 = [[NSDate date] timeIntervalSince1970];
-    
+    NSString *body = [[NSString alloc] initWithString:@"This is some text"];
+    [sessionInfo setValue:body forKey:@"text"];
+   
     [sessionInfo setValue:[NSDate date] forKey:@"begintime"];
     
-   // }
-    
-//    [failedBankDetails setValue:[NSDate date] forKey:@"closeDate"];
-//    [failedBankDetails setValue:[NSDate date] forKey:@"updateDate"];
-//    [failedBankDetails setValue:[NSNumber numberWithInt:12345] forKey:@"zip"];
-//    [failedBankDetails setValue:sessionInfo forKey:@"info"];
-//    [failedBankInfo setValue:failedBankDetails forKey:@"details"];
+
     
     NSError *error;
     if (![self.managedObjectContext save:&error]) {
@@ -136,15 +118,25 @@
     [fetchRequest setEntity:sessionEntity];
     NSArray *fetchedObjects = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
     
+    
+    
     for (NSManagedObject *sessionObject in fetchedObjects) {
         NSLog(@"Latitude: %@", [sessionObject valueForKey:@"latitude"]);
         NSLog(@"Longitude: %@", [sessionObject valueForKey:@"longitude"]);
         NSLog(@"Location: %@", [sessionObject valueForKey:@"location"]);
-        
-        NSManagedObject *textEntryObject = [sessionObject valueForKey:@"textentry"];
-        NSLog(@"Text body: %@", [textEntryObject valueForKey:@"body"]);
+        NSLog(@"Timestamp: %@", [sessionObject valueForKey:@"begintime"]);
+        NSLog(@"Text body: %@", [sessionObject valueForKey:@"text"]);
     }
     
+//    NSEntityDescription *textEntryEntity = [NSEntityDescription
+//                                          entityForName:@"TextEntry" inManagedObjectContext:self.managedObjectContext];
+//    [fetchRequest setEntity:textEntryEntity];
+//    NSArray *fetchedObjects2 = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+//    
+//    for (NSManagedObject *textEntryObject in fetchedObjects2) {
+//        NSLog(@"Text body: %@", [textEntryObject valueForKey:@"body"]);
+//    }
+//    
     
 }
 

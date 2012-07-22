@@ -40,9 +40,7 @@
     [super didReceiveMemoryWarning];
     
     // Release any cached data, images, etc that aren't in use.
-    self.searchWasActive = [self.searchDisplayController isActive];
-//    self.savedSearchTerm = [self.searchDisplayController.searchBar text];
-//    self.savedScopeButtonIndex = [self.searchDisplayController.searchBar selectedScopeButtonIndex];
+   // self.searchWasActive = [self.searchDisplayController isActive];
 }
 
 #pragma mark - View lifecycle
@@ -51,6 +49,8 @@
 {
     [super viewDidLoad];
     [self.navigationController setNavigationBarHidden:NO animated:YES];
+    //[self.navigationController 
+    self.title = @"Captured Text";
     
     NSLog(@"view did load");
     
@@ -61,23 +61,7 @@
 		exit(-1);  // Fail
 	}
     
-    self.title = @"Failed Banks";
     
-    // restore search settings if they were saved in didReceiveMemoryWarning.
-//    if (self.savedSearchTerm)
-//    {
-//        [self.searchDisplayController setActive:self.searchWasActive];
-//        [self.searchDisplayController.searchBar setSelectedScopeButtonIndex:self.savedScopeButtonIndex];
-//        [self.searchDisplayController.searchBar setText:self.savedSearchTerm];
-//        
-//        self.savedSearchTerm = nil;
-//    }
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)viewDidUnload
@@ -115,10 +99,6 @@
 
 #pragma mark - Table view data source
 
-//-(void)searchString:(NSString*)s {
-//    self.savedSearchTerm = s;
-//    [self.tableView reloadData];
-//}
 
 -(NSFetchedResultsController *)fetchedResultsController {
     
@@ -133,25 +113,13 @@
         return 0;
     }
         NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-        NSEntityDescription *entity = [NSEntityDescription entityForName:@"Session" inManagedObjectContext:self.managedObjectContext];
+        NSEntityDescription *entity = [NSEntityDescription entityForName:@"TextEntry" inManagedObjectContext:self.managedObjectContext];
         [fetchRequest setEntity:entity];
     
-    NSSortDescriptor *sort = [[NSSortDescriptor alloc] initWithKey:@"begintime" ascending:NO];
+    NSSortDescriptor *sort = [[NSSortDescriptor alloc] initWithKey:@"Session.begintime" ascending:NO];
     [fetchRequest setSortDescriptors:[NSArray arrayWithObject:sort]];
         
     [fetchRequest setFetchBatchSize:20];
-
-    
-    // searchResults is a NSString*
-//    if (searchResults != nil) {
-//        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name LIKE %@",searchResults];
-//        [fetchRequest setPredicate:predicate];
-//    }
-//    
-//    _fetchedResultsController = 
-//    [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest 
-//                                        managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil 
-//                                                   cacheName:nil];
     
     NSFetchedResultsController *theFetchedResultsController =
     [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
@@ -161,9 +129,6 @@
     _fetchedResultsController.delegate = self;
     
     NSLog(@"FRC");
-
-//    
-//    [fetchRequest release];
     
     return _fetchedResultsController;    
 }
@@ -196,31 +161,14 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-//    NSInteger count = [[[self fetchedResultsControllerForTableView:tableView] sections] count];
-//    
-//    NSLog(@"Number of sections: %i", count);
-//    
-//    return count;
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-//    NSInteger numberOfRows = 0;
-//    NSFetchedResultsController *fetchController = [self fetchedResultsControllerForTableView:tableView];
-//    NSArray *sections = fetchController.sections;
-//    if(sections.count > 0) 
-//    {
-//        id <NSFetchedResultsSectionInfo> sectionInfo = [sections objectAtIndex:section];
-//        numberOfRows = [sectionInfo numberOfObjects];
-//    }
-    
     id  sectionInfo = [[self.fetchedResultsController sections] objectAtIndex:section];
     NSLog(@"Number of rows: %i", [sectionInfo numberOfObjects]);
     return [sectionInfo numberOfObjects];
-    
-//    NSLog(@"Number of rows: %i", numberOfRows);
-//    return numberOfRows;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -234,15 +182,7 @@
     
     // Configure the cell...
     
-//    CallTableCell *cell = (CallTableCell *)[theTableView dequeueReusableCellWithIdentifier:@"TableCell"];
-//    if (cell == nil) 
-//    {
-//        cell = [[[CallTableCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"TableCell"] autorelease];
-//    }
-    
     NSLog(@"Cell for row:%@", indexPath);
-    
-   // [self fetchedResultsController:[self fetchedResultsControllerForTableView:tableView] configureCell:cell atIndexPath:indexPath];
     
     [self configureCell:cell atIndexPath:indexPath];
     return cell;
@@ -303,109 +243,7 @@
 
 
 #pragma mark -
-#pragma mark Content Filtering
-- (void)filterContentForSearchText:(NSString*)searchText scope:(NSInteger)scope
-{
-    // update the filter, in this case just blow away the FRC and let lazy evaluation create another with the relevant search info
-    self.searchFetchedResultsController.delegate = nil;
-    self.searchFetchedResultsController = nil;
-    // if you care about the scope save off the index to be used by the serchFetchedResultsController
-    //self.savedScopeButtonIndex = scope;
-}
 
-
-- (void)controllerWillChangeContent:(NSFetchedResultsController *)controller 
-{
-    UITableView *tableView = controller == self.fetchedResultsController ? self.tableView : self.searchDisplayController.searchResultsTableView;
-    [tableView beginUpdates];
-}
-
-
-- (void)controller:(NSFetchedResultsController *)controller 
-  didChangeSection:(id <NSFetchedResultsSectionInfo>)sectionInfo
-           atIndex:(NSUInteger)sectionIndex 
-     forChangeType:(NSFetchedResultsChangeType)type 
-{
-    UITableView *tableView = controller == self.fetchedResultsController ? self.tableView : self.searchDisplayController.searchResultsTableView;
-    
-    switch(type) 
-    {
-        case NSFetchedResultsChangeInsert:
-            [tableView insertSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
-            break;
-            
-        case NSFetchedResultsChangeDelete:
-            [tableView deleteSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
-            break;
-    }
-}
-
-
-- (void)controller:(NSFetchedResultsController *)controller 
-   didChangeObject:(id)anObject
-       atIndexPath:(NSIndexPath *)theIndexPath 
-     forChangeType:(NSFetchedResultsChangeType)type
-      newIndexPath:(NSIndexPath *)newIndexPath 
-{
-    UITableView *tableView = controller == self.fetchedResultsController ? self.tableView : self.searchDisplayController.searchResultsTableView;
-    
-    switch(type) 
-    {
-        case NSFetchedResultsChangeInsert:
-            [tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
-            break;
-            
-        case NSFetchedResultsChangeDelete:
-            [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:theIndexPath] withRowAnimation:UITableViewRowAnimationFade];
-            break;
-            
-        case NSFetchedResultsChangeUpdate:
-            [self fetchedResultsController:controller configureCell:[tableView cellForRowAtIndexPath:theIndexPath] atIndexPath:theIndexPath];
-            break;
-            
-        case NSFetchedResultsChangeMove:
-            [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:theIndexPath] withRowAnimation:UITableViewRowAnimationFade];
-            [tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath]withRowAnimation:UITableViewRowAnimationFade];
-            break;
-    }
-}
-
-
-- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller 
-{
-    UITableView *tableView = controller == self.fetchedResultsController ? self.tableView : self.searchDisplayController.searchResultsTableView;
-    [tableView endUpdates];
-}
-
-
-
-#pragma mark -
-#pragma mark Search Bar 
-- (void)searchDisplayController:(UISearchDisplayController *)controller willUnloadSearchResultsTableView:(UITableView *)tableView;
-{
-    // search is done so get rid of the search FRC and reclaim memory
-    self.searchFetchedResultsController.delegate = nil;
-    self.searchFetchedResultsController = nil;
-}
-
-- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
-{
-    [self filterContentForSearchText:searchString 
-                               scope:[self.searchDisplayController.searchBar selectedScopeButtonIndex]];
-    
-    // Return YES to cause the search result table view to be reloaded.
-    return YES;
-}
-
-
-- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchScope:(NSInteger)searchOption
-{
-    [self filterContentForSearchText:[self.searchDisplayController.searchBar text] 
-                               scope:[self.searchDisplayController.searchBar selectedScopeButtonIndex]];
-    
-    // Return YES to cause the search result table view to be reloaded.
-    return YES;
-}
 
 
 

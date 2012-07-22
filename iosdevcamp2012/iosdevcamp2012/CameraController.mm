@@ -15,7 +15,7 @@
 #import <stdlib.h>
 
 @implementation CameraController
-
+@synthesize managedObjectContext = _managedObjectContext;
 
 - (id) init {
     self = [super init];
@@ -129,6 +129,27 @@
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
     [self dismissModalViewControllerAnimated:YES];
+}
+
+- (void)saveText:(NSString *)text
+{
+    NSManagedObject *sessionInfo = [NSEntityDescription
+                                    insertNewObjectForEntityForName:@"Session"
+                                    inManagedObjectContext:self.managedObjectContext];
+    
+
+    NSString *locDescription = [[NSString alloc] initWithString:@"This is a description of a location"];
+    [sessionInfo setValue:locDescription forKey:@"location"];
+    
+    [sessionInfo setValue:[NSDate date] forKey:@"begintime"];
+    
+    [sessionInfo setValue:text forKey:@"text"];
+    
+    NSError *error;
+    if (![self.managedObjectContext save:&error]) {
+        NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+    }
+
 }
 
 

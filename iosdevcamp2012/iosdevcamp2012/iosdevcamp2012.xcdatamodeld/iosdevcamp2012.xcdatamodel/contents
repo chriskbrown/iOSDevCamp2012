@@ -5,6 +5,7 @@
         <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="textentry" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="TextEntry" inverseName="Session" inverseEntity="TextEntry" syncable="YES"/>
     </entity>
     <entity name="TextEntry" representedClassName="TextEntry" syncable="YES">
@@ -12,7 +13,7 @@
         <relationship name="Session" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Session" inverseName="textentry" inverseEntity="Session" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Session" positionX="-101" positionY="198" width="128" height="120"/>
+        <element name="Session" positionX="-101" positionY="198" width="128" height="135"/>
         <element name="TextEntry" positionX="106" positionY="192" width="128" height="75"/>
     </elements>
 </model>
