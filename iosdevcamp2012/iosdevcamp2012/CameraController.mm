@@ -6,31 +6,27 @@
 //  Copyright (c) 2012 Millennial Media. All rights reserved.
 //
 
-
+#import <MobileCoreServices/UTCoreTypes.h>
+#import <MediaPlayer/MPMoviePlayerController.h>
 #import "CameraController.h"
 #import "baseapi.h"
 
 @implementation CameraController
 
-@synthesize ipc;
+@synthesize dataPath;
 
-- (void) launchCamera:(UIViewController *)controller {
-    if ([UIImagePickerController isSourceTypeAvailable:
-          UIImagePickerControllerSourceTypeCamera] == NO) {
-        NSLog( @"No camera!" );
-        return;
+- (id) init {
+    self = [super init];
+    if ( self != nil ) { 
+        self.delegate = self;
     }
-    
-    ipc = [UIImagePickerController new];
-    [ipc setSourceType:UIImagePickerControllerCameraCaptureModeVideo];
-    [ipc setDelegate:self];
-    [controller presentModalViewController:controller animated:YES];
+    return self;
 }
 
 - (NSString *) stringFromImage:(UIImage *)img {
     // This was jeeped from a certain Mr. Nolan Brown.
     TessBaseAPI *tess = new TessBaseAPI();
-    tess->SimpleInit([ [self applicationDocumentsDirectory] cStringUsingEncoding:NSUTF8StringEncoding], "eng", false );
+    tess->SimpleInit([ dataPath cStringUsingEncoding:NSUTF8StringEncoding], "eng", false );
     
     CGSize imageSize = [img size];
     double bytes_per_line	= CGImageGetBytesPerRow([img CGImage]);
@@ -49,17 +45,38 @@
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    // TODO: Buffer text. uffer text. ffer text. <-- So this doesn't happen.
+    // TODO: Check for carriage returns and parse accordingly. :-D
+    NSLog(@"Delegate answered.");
+    NSString *type = [info objectForKey:UIImagePickerControllerMediaType];
     
-    //NSString *type = [info objectForKey:UIImagePickerControllerMediaType];
-//    if ( [type isEqualToString:<#(NSString *)#>
-    
-    [ipc dismissModalViewControllerAnimated:YES];
+    if ( [type isEqualToString:@"public.image"] ) {
+        NSString *sfi = [self stringFromImage:[info objectForKey:UIImagePickerControllerOriginalImage]];
+        // TODO: Split up and reassemble image/strings for font purposes and throw it in a thread.
+        NSLog(@"%@", sfi);
+        NSLog( @"Image finished.");
+    } else if ( [type isEqualToString:@"public.movie"] ) {
+        MPMoviePlayerController *mpc = [MPMoviePlayerController new];
+        [mpc setContentURL:[info objectForKey:UIImagePickerControllerMediaURL] ];
+        
+        UIImage *img;
+        int i;
+        for ( i = 0; i < 2*mpc.duration; i++ ) {
+            img = [mpc thumbnailImageAtTime:(i/2) timeOption:MPMovieTimeOptionNearestKeyFrame];
+            NSString *sfi = [self stringFromImage:img];
+            
+            NSLog( @"%@", sfi);
+            NSLog( @"Video finished.");
+        }
+        
+        NSLog(@"VIIIIIDYO!");
+    }
+
     
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
     
-    [ipc dismissModalViewControllerAnimated:YES];
 }
 
 

@@ -35,6 +35,7 @@
 		A7B5ABB915BB9F5A007878B6 /* TextTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B5ABB815BB9F5A007878B6 /* TextTableViewController.m */; };
 		A7FCCAB715BBD2B800E248D5 /* Session.m in Sources */ = {isa = PBXBuildFile; fileRef = A7FCCAB615BBD2B800E248D5 /* Session.m */; };
 		A7FCCABB15BBD2C700E248D5 /* TextEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = A7FCCABA15BBD2C700E248D5 /* TextEntry.m */; };
+		D88F90DB15BBDC9C008936F2 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88F90DA15BBDC9C008936F2 /* MediaPlayer.framework */; };
 		D8939E6415BB4C360016AF67 /* libtesseract_full.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D8939E6315BB4C360016AF67 /* libtesseract_full.a */; };
 		D8939E6515BB4C360016AF67 /* libtesseract_full.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D8939E6315BB4C360016AF67 /* libtesseract_full.a */; };
 		D8939E9815BB51FB0016AF67 /* CameraController.mm in Sources */ = {isa = PBXBuildFile; fileRef = D8939E9715BB51FB0016AF67 /* CameraController.mm */; };
@@ -111,6 +112,7 @@
 		A7FCCAB615BBD2B800E248D5 /* Session.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Session.m; sourceTree = "<group>"; };
 		A7FCCAB915BBD2C700E248D5 /* TextEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextEntry.h; sourceTree = "<group>"; };
 		A7FCCABA15BBD2C700E248D5 /* TextEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextEntry.m; sourceTree = "<group>"; };
+		D88F90DA15BBDC9C008936F2 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		D8939E6315BB4C360016AF67 /* libtesseract_full.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libtesseract_full.a; sourceTree = "<group>"; };
 		D8939E9615BB51FB0016AF67 /* CameraController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraController.h; sourceTree = "<group>"; };
 		D8939E9715BB51FB0016AF67 /* CameraController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CameraController.mm; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D88F90DB15BBDC9C008936F2 /* MediaPlayer.framework in Frameworks */,
 				A77A769215BB87A000A8D57E /* Security.framework in Frameworks */,
 				A77A768F15BB879A00A8D57E /* SystemConfiguration.framework in Frameworks */,
 				D8939E9B15BB6E530016AF67 /* MobileCoreServices.framework in Frameworks */,
@@ -179,6 +182,7 @@
 		A75B8D8C15BB3143005D9719 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D88F90DA15BBDC9C008936F2 /* MediaPlayer.framework */,
 				A77A769115BB87A000A8D57E /* Security.framework */,
 				A77A768E15BB879A00A8D57E /* SystemConfiguration.framework */,
 				D8939E9A15BB6E530016AF67 /* MobileCoreServices.framework */,

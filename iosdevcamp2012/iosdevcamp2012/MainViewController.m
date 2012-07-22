@@ -7,6 +7,7 @@
 
 #import "MainViewController.h"
 #import "CameraController.h"
+#import "AppDelegate.h"
 
 
 @implementation MainViewController
@@ -32,17 +33,19 @@
             return;
         }
         
-        ipc = [UIImagePickerController new];
+        ipc = [CameraController new];
         [ipc setSourceType:UIImagePickerControllerCameraCaptureModeVideo];
-        [ipc setDelegate:self];
+        //[ipc setDelegate:ipc];
         [self presentModalViewController:ipc animated:YES];
         
     } 
     else if (buttonIndex == 1) 
     {
-        ipc = [UIImagePickerController new];
+        ipc = [CameraController new];
         [ipc setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
-        [ipc setDelegate:self];
+        //[ipc setDelegate:ipc];
+        AppDelegate *ad =  (AppDelegate *)[UIApplication sharedApplication].delegate;
+        [ipc setDataPath:[ad.applicationDocumentsDirectory absoluteString] ];
         [self presentModalViewController:ipc animated:YES];
 
     } 
