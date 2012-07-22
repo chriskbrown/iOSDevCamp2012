@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A7141D4115BB6C9F0042B4BA /* CameraController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7141D1315BB6C9F0042B4BA /* CameraController.m */; };
 		A75B8D8E15BB3143005D9719 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A75B8D8D15BB3143005D9719 /* UIKit.framework */; };
 		A75B8D9015BB3143005D9719 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A75B8D8F15BB3143005D9719 /* Foundation.framework */; };
 		A75B8D9215BB3143005D9719 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A75B8D9115BB3143005D9719 /* CoreGraphics.framework */; };
@@ -16,6 +15,7 @@
 		A75B8D9C15BB3143005D9719 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A75B8D9B15BB3143005D9719 /* main.m */; };
 		A75B8DA015BB3143005D9719 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A75B8D9F15BB3143005D9719 /* AppDelegate.m */; };
 		A75B8DA315BB3143005D9719 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A75B8DA115BB3143005D9719 /* MainStoryboard.storyboard */; };
+		A75B8DA615BB3143005D9719 /* iosdevcamp2012.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A75B8DA415BB3143005D9719 /* iosdevcamp2012.xcdatamodeld */; };
 		A75B8DA915BB3143005D9719 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A75B8DA815BB3143005D9719 /* MainViewController.m */; };
 		A75B8DAC15BB3143005D9719 /* FlipsideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A75B8DAB15BB3143005D9719 /* FlipsideViewController.m */; };
 		A75B8DB415BB3143005D9719 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A75B8DB315BB3143005D9719 /* SenTestingKit.framework */; };
@@ -24,16 +24,8 @@
 		A75B8DB715BB3143005D9719 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A75B8D9315BB3143005D9719 /* CoreData.framework */; };
 		A75B8DBF15BB3143005D9719 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A75B8DBD15BB3143005D9719 /* InfoPlist.strings */; };
 		A75B8DC215BB3143005D9719 /* iosdevcamp2012Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = A75B8DC115BB3143005D9719 /* iosdevcamp2012Tests.m */; };
-
-		A766869415BB790200AB48CF /* iosdevcamp2012.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A766869215BB790200AB48CF /* iosdevcamp2012.xcdatamodeld */; };
-		A77D0A5E15BB7188004F73D9 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A77D0A5D15BB7188004F73D9 /* Security.framework */; };
-		A77D0A6015BB7198004F73D9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A77D0A5F15BB7198004F73D9 /* SystemConfiguration.framework */; };
-		A77D0ACC15BB71D5004F73D9 /* GTMHTTPFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = A77D0A7F15BB71D4004F73D9 /* GTMHTTPFetcher.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		A77D0AE015BB71D5004F73D9 /* GTMOAuth2Authentication.m in Sources */ = {isa = PBXBuildFile; fileRef = A77D0AA515BB71D4004F73D9 /* GTMOAuth2Authentication.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		A77D0AE115BB71D5004F73D9 /* GTMOAuth2SignIn.m in Sources */ = {isa = PBXBuildFile; fileRef = A77D0AA715BB71D4004F73D9 /* GTMOAuth2SignIn.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		A77D0AE615BB71D5004F73D9 /* GTMOAuth2ViewControllerTouch.m in Sources */ = {isa = PBXBuildFile; fileRef = A77D0AB015BB71D4004F73D9 /* GTMOAuth2ViewControllerTouch.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		A77D0AE715BB71D5004F73D9 /* GTMOAuth2ViewTouch.xib in Resources */ = {isa = PBXBuildFile; fileRef = A77D0AB115BB71D4004F73D9 /* GTMOAuth2ViewTouch.xib */; };
-
+		A77A768F15BB879A00A8D57E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A77A768E15BB879A00A8D57E /* SystemConfiguration.framework */; };
+		A77A769215BB87A000A8D57E /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A77A769115BB87A000A8D57E /* Security.framework */; };
 		D8939E6415BB4C360016AF67 /* libtesseract_full.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D8939E6315BB4C360016AF67 /* libtesseract_full.a */; };
 		D8939E6515BB4C360016AF67 /* libtesseract_full.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D8939E6315BB4C360016AF67 /* libtesseract_full.a */; };
 		D8939E9815BB51FB0016AF67 /* CameraController.mm in Sources */ = {isa = PBXBuildFile; fileRef = D8939E9715BB51FB0016AF67 /* CameraController.mm */; };
@@ -55,7 +47,6 @@
 		D8939EB215BB7E740016AF67 /* eng.user-words in Resources */ = {isa = PBXBuildFile; fileRef = D8939EA315BB7E740016AF67 /* eng.user-words */; };
 		D8939EB315BB7E740016AF67 /* eng.word-dawg in Resources */ = {isa = PBXBuildFile; fileRef = D8939EA415BB7E740016AF67 /* eng.word-dawg */; };
 		D8939EB415BB7E740016AF67 /* eng.word-dawg in Resources */ = {isa = PBXBuildFile; fileRef = D8939EA415BB7E740016AF67 /* eng.word-dawg */; };
-
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,79 +57,9 @@
 			remoteGlobalIDString = A75B8D8815BB3143005D9719;
 			remoteInfo = iosdevcamp2012;
 		};
-		A77D0AEA15BB71D5004F73D9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A77D0A8015BB71D4004F73D9 /* GTMHTTPFetcher.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D2AAC07E0554694100DB518D;
-			remoteInfo = GTMHTTPFetcherLib;
-		};
-		A77D0AEC15BB71D5004F73D9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A77D0A8015BB71D4004F73D9 /* GTMHTTPFetcher.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 4F74D92F11E68BD300F2D927;
-			remoteInfo = UnitTests;
-		};
-		A77D0AF215BB71D5004F73D9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A77D0AA115BB71D4004F73D9 /* GTMOAuth2.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D2AAC07E0554694100DB518D;
-			remoteInfo = OAuthTouchStaticLib;
-		};
-		A77D0AF415BB71D5004F73D9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A77D0AA115BB71D4004F73D9 /* GTMOAuth2.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 4FC754FA13E77E25006A0C26;
-			remoteInfo = OAuthTouchNonGoogleStaticLib;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A7141D1215BB6C9F0042B4BA /* CameraController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraController.h; sourceTree = "<group>"; };
-		A7141D1315BB6C9F0042B4BA /* CameraController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraController.m; sourceTree = "<group>"; };
-		A7141D1615BB6C9F0042B4BA /* allheaders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = allheaders.h; sourceTree = "<group>"; };
-		A7141D1715BB6C9F0042B4BA /* alltypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = alltypes.h; sourceTree = "<group>"; };
-		A7141D1815BB6C9F0042B4BA /* array.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = array.h; sourceTree = "<group>"; };
-		A7141D1915BB6C9F0042B4BA /* arrayaccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = arrayaccess.h; sourceTree = "<group>"; };
-		A7141D1A15BB6C9F0042B4BA /* bbuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bbuffer.h; sourceTree = "<group>"; };
-		A7141D1B15BB6C9F0042B4BA /* bmf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bmf.h; sourceTree = "<group>"; };
-		A7141D1C15BB6C9F0042B4BA /* bmp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bmp.h; sourceTree = "<group>"; };
-		A7141D1D15BB6C9F0042B4BA /* ccbord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccbord.h; sourceTree = "<group>"; };
-		A7141D1E15BB6C9F0042B4BA /* dewarp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dewarp.h; sourceTree = "<group>"; };
-		A7141D1F15BB6C9F0042B4BA /* environ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = environ.h; sourceTree = "<group>"; };
-		A7141D2015BB6C9F0042B4BA /* freetype.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = freetype.h; sourceTree = "<group>"; };
-		A7141D2115BB6C9F0042B4BA /* gplot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gplot.h; sourceTree = "<group>"; };
-		A7141D2215BB6C9F0042B4BA /* heap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = heap.h; sourceTree = "<group>"; };
-		A7141D2315BB6C9F0042B4BA /* imageio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = imageio.h; sourceTree = "<group>"; };
-		A7141D2415BB6C9F0042B4BA /* jbclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jbclass.h; sourceTree = "<group>"; };
-		A7141D2515BB6C9F0042B4BA /* leptprotos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = leptprotos.h; sourceTree = "<group>"; };
-		A7141D2615BB6C9F0042B4BA /* leptwin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = leptwin.h; sourceTree = "<group>"; };
-		A7141D2715BB6C9F0042B4BA /* list.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = list.h; sourceTree = "<group>"; };
-		A7141D2815BB6C9F0042B4BA /* morph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = morph.h; sourceTree = "<group>"; };
-		A7141D2915BB6C9F0042B4BA /* pix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pix.h; sourceTree = "<group>"; };
-		A7141D2A15BB6C9F0042B4BA /* ptra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ptra.h; sourceTree = "<group>"; };
-		A7141D2B15BB6C9F0042B4BA /* queue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = queue.h; sourceTree = "<group>"; };
-		A7141D2C15BB6C9F0042B4BA /* readbarcode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = readbarcode.h; sourceTree = "<group>"; };
-		A7141D2D15BB6C9F0042B4BA /* regutils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = regutils.h; sourceTree = "<group>"; };
-		A7141D2E15BB6C9F0042B4BA /* stack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stack.h; sourceTree = "<group>"; };
-		A7141D2F15BB6C9F0042B4BA /* sudoku.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sudoku.h; sourceTree = "<group>"; };
-		A7141D3015BB6C9F0042B4BA /* watershed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = watershed.h; sourceTree = "<group>"; };
-		A7141D3215BB6C9F0042B4BA /* apitypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = apitypes.h; sourceTree = "<group>"; };
-		A7141D3315BB6C9F0042B4BA /* baseapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = baseapi.h; sourceTree = "<group>"; };
-		A7141D3415BB6C9F0042B4BA /* errcode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = errcode.h; sourceTree = "<group>"; };
-		A7141D3515BB6C9F0042B4BA /* genericvector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = genericvector.h; sourceTree = "<group>"; };
-		A7141D3615BB6C9F0042B4BA /* helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = helpers.h; sourceTree = "<group>"; };
-		A7141D3715BB6C9F0042B4BA /* host.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = host.h; sourceTree = "<group>"; };
-		A7141D3815BB6C9F0042B4BA /* ndminx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ndminx.h; sourceTree = "<group>"; };
-		A7141D3915BB6C9F0042B4BA /* ocrclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ocrclass.h; sourceTree = "<group>"; };
-		A7141D3A15BB6C9F0042B4BA /* platform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = platform.h; sourceTree = "<group>"; };
-		A7141D3B15BB6C9F0042B4BA /* publictypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = publictypes.h; sourceTree = "<group>"; };
-		A7141D3C15BB6C9F0042B4BA /* tesscallback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tesscallback.h; sourceTree = "<group>"; };
-		A7141D3D15BB6C9F0042B4BA /* thresholder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = thresholder.h; sourceTree = "<group>"; };
-		A7141D3E15BB6C9F0042B4BA /* unichar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unichar.h; sourceTree = "<group>"; };
 		A75B8D8915BB3143005D9719 /* iosdevcamp2012.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosdevcamp2012.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A75B8D8D15BB3143005D9719 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A75B8D8F15BB3143005D9719 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -151,6 +72,7 @@
 		A75B8D9E15BB3143005D9719 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A75B8D9F15BB3143005D9719 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		A75B8DA215BB3143005D9719 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		A75B8DA515BB3143005D9719 /* iosdevcamp2012.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iosdevcamp2012.xcdatamodel; sourceTree = "<group>"; };
 		A75B8DA715BB3143005D9719 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		A75B8DA815BB3143005D9719 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		A75B8DAA15BB3143005D9719 /* FlipsideViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlipsideViewController.h; sourceTree = "<group>"; };
@@ -161,22 +83,8 @@
 		A75B8DBE15BB3143005D9719 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A75B8DC015BB3143005D9719 /* iosdevcamp2012Tests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iosdevcamp2012Tests.h; sourceTree = "<group>"; };
 		A75B8DC115BB3143005D9719 /* iosdevcamp2012Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iosdevcamp2012Tests.m; sourceTree = "<group>"; };
-
-		A766869315BB790200AB48CF /* iosdevcamp2012.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iosdevcamp2012.xcdatamodel; sourceTree = "<group>"; };
-		A77D0A5D15BB7188004F73D9 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		A77D0A5F15BB7198004F73D9 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		A77D0A7E15BB71D4004F73D9 /* GTMHTTPFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMHTTPFetcher.h; sourceTree = "<group>"; };
-		A77D0A7F15BB71D4004F73D9 /* GTMHTTPFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMHTTPFetcher.m; sourceTree = "<group>"; };
-		A77D0A8015BB71D4004F73D9 /* GTMHTTPFetcher.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = GTMHTTPFetcher.xcodeproj; sourceTree = "<group>"; };
-		A77D0AA115BB71D4004F73D9 /* GTMOAuth2.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = GTMOAuth2.xcodeproj; sourceTree = "<group>"; };
-		A77D0AA415BB71D4004F73D9 /* GTMOAuth2Authentication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMOAuth2Authentication.h; sourceTree = "<group>"; };
-		A77D0AA515BB71D4004F73D9 /* GTMOAuth2Authentication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMOAuth2Authentication.m; sourceTree = "<group>"; };
-		A77D0AA615BB71D4004F73D9 /* GTMOAuth2SignIn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMOAuth2SignIn.h; sourceTree = "<group>"; };
-		A77D0AA715BB71D4004F73D9 /* GTMOAuth2SignIn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMOAuth2SignIn.m; sourceTree = "<group>"; };
-		A77D0AAF15BB71D4004F73D9 /* GTMOAuth2ViewControllerTouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMOAuth2ViewControllerTouch.h; sourceTree = "<group>"; };
-		A77D0AB015BB71D4004F73D9 /* GTMOAuth2ViewControllerTouch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMOAuth2ViewControllerTouch.m; sourceTree = "<group>"; };
-		A77D0AB115BB71D4004F73D9 /* GTMOAuth2ViewTouch.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GTMOAuth2ViewTouch.xib; sourceTree = "<group>"; };
-
+		A77A768E15BB879A00A8D57E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		A77A769115BB87A000A8D57E /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		D8939E6315BB4C360016AF67 /* libtesseract_full.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libtesseract_full.a; sourceTree = "<group>"; };
 		D8939E9615BB51FB0016AF67 /* CameraController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraController.h; sourceTree = "<group>"; };
 		D8939E9715BB51FB0016AF67 /* CameraController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CameraController.mm; sourceTree = "<group>"; };
@@ -190,7 +98,6 @@
 		D8939EA315BB7E740016AF67 /* eng.user-words */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "eng.user-words"; sourceTree = "<group>"; };
 		D8939EA415BB7E740016AF67 /* eng.word-dawg */ = {isa = PBXFileReference; lastKnownFileType = file; path = "eng.word-dawg"; sourceTree = "<group>"; };
 		D8939EB515BB7E820016AF67 /* baseapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = baseapi.h; path = tessdata/baseapi.h; sourceTree = "<group>"; };
-
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,9 +105,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-
-				A77D0A6015BB7198004F73D9 /* SystemConfiguration.framework in Frameworks */,
-				A77D0A5E15BB7188004F73D9 /* Security.framework in Frameworks */,
+				A77A769215BB87A000A8D57E /* Security.framework in Frameworks */,
+				A77A768F15BB879A00A8D57E /* SystemConfiguration.framework in Frameworks */,
 				D8939E9B15BB6E530016AF67 /* MobileCoreServices.framework in Frameworks */,
 				A75B8D8E15BB3143005D9719 /* UIKit.framework in Frameworks */,
 				A75B8D9015BB3143005D9719 /* Foundation.framework in Frameworks */,
@@ -225,73 +131,9 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A7141D1415BB6C9F0042B4BA /* include */ = {
-			isa = PBXGroup;
-			children = (
-				A7141D1515BB6C9F0042B4BA /* leptonica */,
-				A7141D3115BB6C9F0042B4BA /* tesseract */,
-			);
-			path = include;
-			sourceTree = "<group>";
-		};
-		A7141D1515BB6C9F0042B4BA /* leptonica */ = {
-			isa = PBXGroup;
-			children = (
-				A7141D1615BB6C9F0042B4BA /* allheaders.h */,
-				A7141D1715BB6C9F0042B4BA /* alltypes.h */,
-				A7141D1815BB6C9F0042B4BA /* array.h */,
-				A7141D1915BB6C9F0042B4BA /* arrayaccess.h */,
-				A7141D1A15BB6C9F0042B4BA /* bbuffer.h */,
-				A7141D1B15BB6C9F0042B4BA /* bmf.h */,
-				A7141D1C15BB6C9F0042B4BA /* bmp.h */,
-				A7141D1D15BB6C9F0042B4BA /* ccbord.h */,
-				A7141D1E15BB6C9F0042B4BA /* dewarp.h */,
-				A7141D1F15BB6C9F0042B4BA /* environ.h */,
-				A7141D2015BB6C9F0042B4BA /* freetype.h */,
-				A7141D2115BB6C9F0042B4BA /* gplot.h */,
-				A7141D2215BB6C9F0042B4BA /* heap.h */,
-				A7141D2315BB6C9F0042B4BA /* imageio.h */,
-				A7141D2415BB6C9F0042B4BA /* jbclass.h */,
-				A7141D2515BB6C9F0042B4BA /* leptprotos.h */,
-				A7141D2615BB6C9F0042B4BA /* leptwin.h */,
-				A7141D2715BB6C9F0042B4BA /* list.h */,
-				A7141D2815BB6C9F0042B4BA /* morph.h */,
-				A7141D2915BB6C9F0042B4BA /* pix.h */,
-				A7141D2A15BB6C9F0042B4BA /* ptra.h */,
-				A7141D2B15BB6C9F0042B4BA /* queue.h */,
-				A7141D2C15BB6C9F0042B4BA /* readbarcode.h */,
-				A7141D2D15BB6C9F0042B4BA /* regutils.h */,
-				A7141D2E15BB6C9F0042B4BA /* stack.h */,
-				A7141D2F15BB6C9F0042B4BA /* sudoku.h */,
-				A7141D3015BB6C9F0042B4BA /* watershed.h */,
-			);
-			path = leptonica;
-			sourceTree = "<group>";
-		};
-		A7141D3115BB6C9F0042B4BA /* tesseract */ = {
-			isa = PBXGroup;
-			children = (
-				A7141D3215BB6C9F0042B4BA /* apitypes.h */,
-				A7141D3315BB6C9F0042B4BA /* baseapi.h */,
-				A7141D3415BB6C9F0042B4BA /* errcode.h */,
-				A7141D3515BB6C9F0042B4BA /* genericvector.h */,
-				A7141D3615BB6C9F0042B4BA /* helpers.h */,
-				A7141D3715BB6C9F0042B4BA /* host.h */,
-				A7141D3815BB6C9F0042B4BA /* ndminx.h */,
-				A7141D3915BB6C9F0042B4BA /* ocrclass.h */,
-				A7141D3A15BB6C9F0042B4BA /* platform.h */,
-				A7141D3B15BB6C9F0042B4BA /* publictypes.h */,
-				A7141D3C15BB6C9F0042B4BA /* tesscallback.h */,
-				A7141D3D15BB6C9F0042B4BA /* thresholder.h */,
-				A7141D3E15BB6C9F0042B4BA /* unichar.h */,
-			);
-			path = tesseract;
-			sourceTree = "<group>";
-		};
 		A75B8D7E15BB3142005D9719 = {
 			isa = PBXGroup;
 			children = (
-				A77D0A6115BB71D4004F73D9 /* gtm-oauth2-read-only */,
 				A75B8D9515BB3143005D9719 /* iosdevcamp2012 */,
 				A75B8DBA15BB3143005D9719 /* iosdevcamp2012Tests */,
 				A75B8D8C15BB3143005D9719 /* Frameworks */,
@@ -311,12 +153,9 @@
 		A75B8D8C15BB3143005D9719 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-
-				A77D0A5F15BB7198004F73D9 /* SystemConfiguration.framework */,
-				A77D0A5D15BB7188004F73D9 /* Security.framework */,
-
+				A77A769115BB87A000A8D57E /* Security.framework */,
+				A77A768E15BB879A00A8D57E /* SystemConfiguration.framework */,
 				D8939E9A15BB6E530016AF67 /* MobileCoreServices.framework */,
-
 				A75B8D8D15BB3143005D9719 /* UIKit.framework */,
 				A75B8D8F15BB3143005D9719 /* Foundation.framework */,
 				A75B8D9115BB3143005D9719 /* CoreGraphics.framework */,
@@ -329,10 +168,6 @@
 		A75B8D9515BB3143005D9719 /* iosdevcamp2012 */ = {
 			isa = PBXGroup;
 			children = (
-
-				A766869215BB790200AB48CF /* iosdevcamp2012.xcdatamodeld */,
-				A7141D1215BB6C9F0042B4BA /* CameraController.h */,
-				A7141D1315BB6C9F0042B4BA /* CameraController.m */,
 				D8939EB515BB7E820016AF67 /* baseapi.h */,
 				D8939E9C15BB7E740016AF67 /* tessdata */,
 				D8939E9515BB4D560016AF67 /* libs */,
@@ -345,7 +180,7 @@
 				D8939E9715BB51FB0016AF67 /* CameraController.mm */,
 				A75B8DAA15BB3143005D9719 /* FlipsideViewController.h */,
 				A75B8DAB15BB3143005D9719 /* FlipsideViewController.m */,
-				A7141D1415BB6C9F0042B4BA /* include */,
+				A75B8DA415BB3143005D9719 /* iosdevcamp2012.xcdatamodeld */,
 				A75B8D9615BB3143005D9719 /* Supporting Files */,
 			);
 			path = iosdevcamp2012;
@@ -381,64 +216,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		A77D0A6115BB71D4004F73D9 /* gtm-oauth2-read-only */ = {
-			isa = PBXGroup;
-			children = (
-				A77D0A7B15BB71D4004F73D9 /* HTTPFetcher */,
-				A77D0AA015BB71D4004F73D9 /* Source */,
-			);
-			path = "gtm-oauth2-read-only";
-			sourceTree = "<group>";
-		};
-		A77D0A7B15BB71D4004F73D9 /* HTTPFetcher */ = {
-			isa = PBXGroup;
-			children = (
-				A77D0A7E15BB71D4004F73D9 /* GTMHTTPFetcher.h */,
-				A77D0A7F15BB71D4004F73D9 /* GTMHTTPFetcher.m */,
-				A77D0A8015BB71D4004F73D9 /* GTMHTTPFetcher.xcodeproj */,
-			);
-			path = HTTPFetcher;
-			sourceTree = "<group>";
-		};
-		A77D0A8115BB71D4004F73D9 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				A77D0AEB15BB71D5004F73D9 /* libGTMHTTPFetcher.a */,
-				A77D0AED15BB71D5004F73D9 /* UnitTests.octest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		A77D0AA015BB71D4004F73D9 /* Source */ = {
-			isa = PBXGroup;
-			children = (
-				A77D0AA115BB71D4004F73D9 /* GTMOAuth2.xcodeproj */,
-				A77D0AA415BB71D4004F73D9 /* GTMOAuth2Authentication.h */,
-				A77D0AA515BB71D4004F73D9 /* GTMOAuth2Authentication.m */,
-				A77D0AA615BB71D4004F73D9 /* GTMOAuth2SignIn.h */,
-				A77D0AA715BB71D4004F73D9 /* GTMOAuth2SignIn.m */,
-				A77D0AAE15BB71D4004F73D9 /* Touch */,
-			);
-			path = Source;
-			sourceTree = "<group>";
-		};
-		A77D0AA215BB71D4004F73D9 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				A77D0AF315BB71D5004F73D9 /* libOAuthTouch2.a */,
-				A77D0AF515BB71D5004F73D9 /* libOAuthTouch2.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		A77D0AAE15BB71D4004F73D9 /* Touch */ = {
-			isa = PBXGroup;
-			children = (
-				A77D0AAF15BB71D4004F73D9 /* GTMOAuth2ViewControllerTouch.h */,
-				A77D0AB015BB71D4004F73D9 /* GTMOAuth2ViewControllerTouch.m */,
-				A77D0AB115BB71D4004F73D9 /* GTMOAuth2ViewTouch.xib */,
-			);
-			path = Touch;
 		D8939E9515BB4D560016AF67 /* libs */ = {
 			isa = PBXGroup;
 			children = (
@@ -520,16 +297,6 @@
 			mainGroup = A75B8D7E15BB3142005D9719;
 			productRefGroup = A75B8D8A15BB3143005D9719 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = A77D0A8115BB71D4004F73D9 /* Products */;
-					ProjectRef = A77D0A8015BB71D4004F73D9 /* GTMHTTPFetcher.xcodeproj */;
-				},
-				{
-					ProductGroup = A77D0AA215BB71D4004F73D9 /* Products */;
-					ProjectRef = A77D0AA115BB71D4004F73D9 /* GTMOAuth2.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				A75B8D8815BB3143005D9719 /* iosdevcamp2012 */,
@@ -538,37 +305,6 @@
 		};
 /* End PBXProject section */
 
-/* Begin PBXReferenceProxy section */
-		A77D0AEB15BB71D5004F73D9 /* libGTMHTTPFetcher.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libGTMHTTPFetcher.a;
-			remoteRef = A77D0AEA15BB71D5004F73D9 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		A77D0AED15BB71D5004F73D9 /* UnitTests.octest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = UnitTests.octest;
-			remoteRef = A77D0AEC15BB71D5004F73D9 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		A77D0AF315BB71D5004F73D9 /* libOAuthTouch2.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libOAuthTouch2.a;
-			remoteRef = A77D0AF215BB71D5004F73D9 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		A77D0AF515BB71D5004F73D9 /* libOAuthTouch2.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libOAuthTouch2.a;
-			remoteRef = A77D0AF415BB71D5004F73D9 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
-
 /* Begin PBXResourcesBuildPhase section */
 		A75B8D8715BB3143005D9719 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
@@ -576,7 +312,6 @@
 			files = (
 				A75B8D9A15BB3143005D9719 /* InfoPlist.strings in Resources */,
 				A75B8DA315BB3143005D9719 /* MainStoryboard.storyboard in Resources */,
-				A77D0AE715BB71D5004F73D9 /* GTMOAuth2ViewTouch.xib in Resources */,
 				D8939EA515BB7E740016AF67 /* eng.DangAmbigs in Resources */,
 				D8939EA715BB7E740016AF67 /* eng.freq-dawg in Resources */,
 				D8939EA915BB7E740016AF67 /* eng.inttemp in Resources */,
@@ -629,14 +364,9 @@
 			files = (
 				A75B8D9C15BB3143005D9719 /* main.m in Sources */,
 				A75B8DA015BB3143005D9719 /* AppDelegate.m in Sources */,
+				A75B8DA615BB3143005D9719 /* iosdevcamp2012.xcdatamodeld in Sources */,
 				A75B8DA915BB3143005D9719 /* MainViewController.m in Sources */,
 				A75B8DAC15BB3143005D9719 /* FlipsideViewController.m in Sources */,
-				A7141D4115BB6C9F0042B4BA /* CameraController.m in Sources */,
-				A77D0ACC15BB71D5004F73D9 /* GTMHTTPFetcher.m in Sources */,
-				A77D0AE015BB71D5004F73D9 /* GTMOAuth2Authentication.m in Sources */,
-				A77D0AE115BB71D5004F73D9 /* GTMOAuth2SignIn.m in Sources */,
-				A77D0AE615BB71D5004F73D9 /* GTMOAuth2ViewControllerTouch.m in Sources */,
-				A766869415BB790200AB48CF /* iosdevcamp2012.xcdatamodeld in Sources */,
 				D8939E9815BB51FB0016AF67 /* CameraController.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -838,12 +568,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		A766869215BB790200AB48CF /* iosdevcamp2012.xcdatamodeld */ = {
+		A75B8DA415BB3143005D9719 /* iosdevcamp2012.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				A766869315BB790200AB48CF /* iosdevcamp2012.xcdatamodel */,
+				A75B8DA515BB3143005D9719 /* iosdevcamp2012.xcdatamodel */,
 			);
-			currentVersion = A766869315BB790200AB48CF /* iosdevcamp2012.xcdatamodel */;
+			currentVersion = A75B8DA515BB3143005D9719 /* iosdevcamp2012.xcdatamodel */;
 			path = iosdevcamp2012.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
