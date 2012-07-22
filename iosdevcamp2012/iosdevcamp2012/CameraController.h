@@ -7,9 +7,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CameraController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+@interface CameraController : NSObject  <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
+- (void) launchCamera:(UIViewController *)controller;
 - (NSString *) stringFromImage:(UIImage *)img;
 - (NSString *) applicationDocumentsDirectory;
+@property (nonatomic, readonly) UIImagePickerController* ipc;
 
 @end

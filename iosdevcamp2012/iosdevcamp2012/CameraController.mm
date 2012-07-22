@@ -6,26 +6,24 @@
 //  Copyright (c) 2012 Millennial Media. All rights reserved.
 //
 
+
 #import "CameraController.h"
 #import "baseapi.h"
 
 @implementation CameraController
 
-- (void) viewDidLoad {
-    [self launchCamera:self];
-}
+@synthesize ipc;
 
 - (void) launchCamera:(UIViewController *)controller {
-    CameraController *cc = self;
-    
     if ([UIImagePickerController isSourceTypeAvailable:
           UIImagePickerControllerSourceTypeCamera] == NO) {
+        NSLog( @"No camera!" );
         return;
     }
     
-    UIImagePickerController *ipc = [UIImagePickerController new];
+    ipc = [UIImagePickerController new];
     [ipc setSourceType:UIImagePickerControllerCameraCaptureModeVideo];
-    [ipc setDelegate:cc];
+    [ipc setDelegate:self];
     [controller presentModalViewController:controller animated:YES];
 }
 
@@ -51,12 +49,17 @@
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
-    // TODO: Call the above parse images for text function
+    
+    NSString *type = [info objectForKey:UIImagePickerControllerMediaType];
+//    if ( [type isEqualToString:<#(NSString *)#>
+    
+    [ipc dismissModalViewControllerAnimated:YES];
     
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
-    // TODO: Return to main menu
+    
+    [ipc dismissModalViewControllerAnimated:YES];
 }
 
 
