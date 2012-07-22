@@ -30,27 +30,23 @@
     NSArray *documentPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);                                                     
     NSString *documentPath = ([documentPaths count] > 0) ? [documentPaths objectAtIndex:0] : nil;                                                                 
     
-    NSString *dataPath = [documentPath stringByAppendingPathComponent:@"tessdata"];                                                                               
+    NSString *dataPath = [documentPath stringByAppendingPathComponent:@"../iosdevcamp2012.app"];                                                                               
     NSFileManager *fileManager = [NSFileManager defaultManager];                                                                                                  
     // If the expected store doesn't exist, copy the default store.
     if (![fileManager fileExistsAtPath:dataPath]) {
         // get the path to the app bundle (with the tessdata dir)
         NSString *bundlePath = [[NSBundle mainBundle] bundlePath];                                                                                                
-        NSString *tessdataPath = [bundlePath stringByAppendingPathComponent:@"tessdata"];                                                                         
+        NSString *tessdataPath = [bundlePath stringByAppendingPathComponent:@"../iosdevcamp2012.app"];                                                                         
         if (tessdataPath) {
             [fileManager copyItemAtPath:tessdataPath toPath:dataPath error:NULL];                                                                                 
         }
     }
     
-    
-    setenv("TESSDATA_PREFIX", [[documentPath stringByAppendingString:@"/"] UTF8String], 1);
-    
-    
+    setenv("TESSDATA_PREFIX", [[dataPath stringByAppendingString:@"/"] UTF8String], 1);
     
     tesseract::TessBaseAPI* tess = new tesseract::TessBaseAPI();
     tess->Init([ dataPath cStringUsingEncoding:NSUTF8StringEncoding], "eng" );
     
-    printf("%s \n", getenv("TESSDATA_PREFIX") );
     return tess;
 }
 
