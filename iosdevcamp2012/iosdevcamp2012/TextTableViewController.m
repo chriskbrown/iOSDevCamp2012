@@ -16,7 +16,7 @@
 @end
 
 @implementation TextTableViewController
-@synthesize fetchedResultsController;
+@synthesize fetchedResultsController = _fetchedResultsController;
 @synthesize mySearchDisplayController;
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize searchFetchedResultsController;
@@ -27,9 +27,10 @@
 {
     self = [super initWithStyle:style];
     if (self) {
-        NSLog(@"Table view controller");
+        
         // Custom initialization
     }
+    NSLog(@"Table view controller");
     return self;
 }
 
@@ -39,6 +40,9 @@
     [super didReceiveMemoryWarning];
     
     // Release any cached data, images, etc that aren't in use.
+    self.searchWasActive = [self.searchDisplayController isActive];
+    self.savedSearchTerm = [self.searchDisplayController.searchBar text];
+    self.savedScopeButtonIndex = [self.searchDisplayController.searchBar selectedScopeButtonIndex];
 }
 
 #pragma mark - View lifecycle
@@ -46,6 +50,27 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    NSLog(@"view did load");
+    
+    NSError *error;
+	if (![[self fetchedResultsController] performFetch:&error]) {
+		// Update to handle the error appropriately.
+		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+		exit(-1);  // Fail
+	}
+    
+    self.title = @"Failed Banks";
+    
+    // restore search settings if they were saved in didReceiveMemoryWarning.
+//    if (self.savedSearchTerm)
+//    {
+//        [self.searchDisplayController setActive:self.searchWasActive];
+//        [self.searchDisplayController.searchBar setSelectedScopeButtonIndex:self.savedScopeButtonIndex];
+//        [self.searchDisplayController.searchBar setText:self.savedSearchTerm];
+//        
+//        self.savedSearchTerm = nil;
+//    }
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -96,24 +121,25 @@
 
 -(NSFetchedResultsController *)fetchedResultsController {
     
-    if (fetchedResultsController != nil) {
-        return fetchedResultsController;
+    if (_fetchedResultsController != nil) {
+        return _fetchedResultsController;
     }
     
     if(self.managedObjectContext == nil) 
     {
         NSLog(@"Empty context");
        // self.managedObjectContext = [[UIApplication sharedApplication]
+        return 0;
     }
-    else
-    {
         NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
         NSEntityDescription *entity = [NSEntityDescription entityForName:@"Session" inManagedObjectContext:self.managedObjectContext];
         [fetchRequest setEntity:entity];
+    
+    NSSortDescriptor *sort = [[NSSortDescriptor alloc] initWithKey:@"begintime" ascending:NO];
+    [fetchRequest setSortDescriptors:[NSArray arrayWithObject:sort]];
         
-        [fetchRequest setFetchBatchSize:20];
-        
-    }
+    [fetchRequest setFetchBatchSize:20];
+
     
     // searchResults is a NSString*
 //    if (searchResults != nil) {
@@ -121,51 +147,79 @@
 //        [fetchRequest setPredicate:predicate];
 //    }
 //    
-//    fetchedResultsController = 
+//    _fetchedResultsController = 
 //    [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest 
-//                                        managedObjectContext:self.context sectionNameKeyPath:nil 
+//                                        managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil 
 //                                                   cacheName:nil];
-//    fetchedResultsController.delegate = self;
+    
+    NSFetchedResultsController *theFetchedResultsController =
+    [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
+                                        managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil
+                                                   cacheName:nil];
+    self.fetchedResultsController = theFetchedResultsController;
+    _fetchedResultsController.delegate = self;
+    
+    NSLog(@"FRC");
+
 //    
 //    [fetchRequest release];
     
-    return fetchedResultsController;    
+    return _fetchedResultsController;    
 }
 
 
 - (NSFetchedResultsController *)fetchedResultsControllerForTableView:(UITableView *)tableView
 {
+    int i = self.tableView ? 1 : 0;
+    NSLog(@"Table view true: %i", i);
     return tableView == self.tableView ? self.fetchedResultsController : self.searchFetchedResultsController;
 }
 
+- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
+    Session *session = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    cell.textLabel.text = session.location;
+    NSLog(@"Cell text:%@", session.location);
+}
+
+
+
 - (void)fetchedResultsController:(NSFetchedResultsController *)fetchedResultsController configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
+    NSLog(@"FRC val:%@", indexPath);
     Session *session = [fetchedResultsController objectAtIndexPath:indexPath];
     cell.textLabel.text = session.location;
-    NSLog(@"Cell text:%s", session.location);
+    NSLog(@"Cell text:%@", session.location);
 
 }
 
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    NSInteger count = [[[self fetchedResultsControllerForTableView:tableView] sections] count];
-    
-    return count;
+//    NSInteger count = [[[self fetchedResultsControllerForTableView:tableView] sections] count];
+//    
+//    NSLog(@"Number of sections: %i", count);
+//    
+//    return count;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSInteger numberOfRows = 0;
-    NSFetchedResultsController *fetchController = [self fetchedResultsControllerForTableView:tableView];
-    NSArray *sections = fetchController.sections;
-    if(sections.count > 0) 
-    {
-        id <NSFetchedResultsSectionInfo> sectionInfo = [sections objectAtIndex:section];
-        numberOfRows = [sectionInfo numberOfObjects];
-    }
+//    NSInteger numberOfRows = 0;
+//    NSFetchedResultsController *fetchController = [self fetchedResultsControllerForTableView:tableView];
+//    NSArray *sections = fetchController.sections;
+//    if(sections.count > 0) 
+//    {
+//        id <NSFetchedResultsSectionInfo> sectionInfo = [sections objectAtIndex:section];
+//        numberOfRows = [sectionInfo numberOfObjects];
+//    }
     
-    return numberOfRows;
+    id  sectionInfo = [[self.fetchedResultsController sections] objectAtIndex:section];
+    NSLog(@"Number of rows: %i", [sectionInfo numberOfObjects]);
+    return [sectionInfo numberOfObjects];
+    
+//    NSLog(@"Number of rows: %i", numberOfRows);
+//    return numberOfRows;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -185,7 +239,11 @@
 //        cell = [[[CallTableCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"TableCell"] autorelease];
 //    }
     
-    [self fetchedResultsController:[self fetchedResultsControllerForTableView:tableView] configureCell:cell atIndexPath:indexPath];
+    NSLog(@"Cell for row:%@", indexPath);
+    
+   // [self fetchedResultsController:[self fetchedResultsControllerForTableView:tableView] configureCell:cell atIndexPath:indexPath];
+    
+    [self configureCell:cell atIndexPath:indexPath];
     return cell;
 }
 
