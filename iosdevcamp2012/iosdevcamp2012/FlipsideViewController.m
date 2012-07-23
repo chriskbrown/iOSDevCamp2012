@@ -29,7 +29,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
-    sectionArray =  [NSArray arrayWithObjects:@"About Us", @"Help", @"Website", nil];
+    sectionArray =  [NSArray arrayWithObjects:@"About Us", @"Authors", @"Website", nil];
 	
 	return [sectionArray count];
 }
@@ -37,7 +37,18 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return 3;
+    if (section == 0) 
+    {
+        return 2;
+    }
+    else if (section == 1)
+    {
+        return 3;
+    }
+    else
+    {
+        return 3; 
+    }
 }
 
 
@@ -62,29 +73,45 @@
     {
         if([indexPath row] == 0)
         {
-           cell.textLabel.text = @"Yo"; 
+           cell.textLabel.text = @"Created at iOSDevCamp2012"; 
         }
         else
         {
-            cell.textLabel.text = @"Other cell";
+            cell.textLabel.text = @"Licensed under Apache 2.0";
         }
     }
     else if (indexPath.section == 1)
     {
-        
+        if([indexPath row] == 0)
+        {
+            cell.textLabel.text = @"Mark Burger"; 
+        }
+        else if ([indexPath row] == 1)
+        {
+            cell.textLabel.text = @"James Hughes";
+        }
+        else
+        {
+            cell.textLabel.text = @"Chris Brown";
+        }
+
     }
     else
     {
-        
+        if([indexPath row] == 0)
+        {
+            cell.textLabel.text = @"beerfundlabs.com"; 
+        }
+        else if ([indexPath row] == 1)
+        {
+            cell.textLabel.text = @"@chriskbrown";
+        }
+        else
+        {
+            cell.textLabel.text = @"github.com/chriskbrown";
+        }
     }
 }
-
-
-
-
-
-
-
 
 
 - (void)awakeFromNib
